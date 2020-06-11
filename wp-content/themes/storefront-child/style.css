@@ -9,7 +9,14 @@ Author URI:   https://richbee.ru/
 
 */
 
-html {
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;700;800;900&display=swap');
+
+html body {
+    font-family: 'Alegreya', serif !important;
+
+}
+
+html header{
     font-family: 'Roboto', sans-serif;
 }
 
@@ -106,6 +113,113 @@ ul.menu li.current-menu-item > a:before {
 .form-control:focus {
     box-shadow: none !important;
 }
+
+
+.top-header {
+    padding: 13px 0;
+    background: #272928;
+}
+
+.top-header .navbar-nav {
+    flex-direction: row;
+    margin: 0;
+}
+
+.navbar-nav {
+    margin: 0;
+}
+
+.top-header-body {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.top-header .navbar-nav a, .top-header a {
+    position: relative;
+    padding: 1rem 0 !important;
+    margin: 0 10px;
+    transition: color .1s cubic-bezier(.4, 0, .2, 1);
+
+    font-size: 14px;
+    line-height: 19px;
+    color: #FFFFFF;
+}
+
+.top-header .navbar-nav li:first-of-type a {
+    margin-left: 0;
+}
+
+header .header-menu {
+    flex-grow: unset;
+}
+
+header .header-menu ul li a {
+    font-weight: normal;
+    font-size: 16px;
+    padding: 15px 0 !important;
+    line-height: 19px;
+    color: #000000 !important;
+    margin: 0 15px;
+}
+
+header .header-menu ul li:first-of-type a {
+    margin-left: 0;
+}
+
+.header-phones {
+    display: flex;
+    flex-direction: row;
+    margin-right: 30px;
+    align-items: flex-end;
+}
+
+.header-phones img {
+    margin-right: 5px;
+}
+
+.header-phones img:last-of-type {
+    margin-right: 0;
+}
+
+.header-phones a {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    display: table;
+    color: #000000;
+    margin-bottom: 6px;
+}
+
+.header-phones p {
+    margin-left: 15px;
+    margin-bottom: 0;
+}
+
+.header-phones a:last-of-type {
+    margin-bottom: 0;
+}
+
+.navbar-brand > div {
+    position: absolute;
+    padding: 18px;
+    background: #fff;
+    display: block;
+    border-radius: 50%;
+    top: -56px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    max-width: 135px;
+    width: 100%;
+    text-align: center;
+}
+
+header .s-header__basket-wr {
+    margin: 0 !important;
+    align-self: flex-end;
+}
+
 
 /*--------------------------------------------------------------
 # RADIO BTN
@@ -263,14 +377,11 @@ ul.menu li.current-menu-item > a:before {
 
 header#masthead {
     opacity: 1;
-    font-family: Roboto, sans-serif;
-    padding: 1.9rem 1rem !important;
-    background-color: #1C1C1C;
-    color: #EEEEEE;
-    border-bottom: 1px solid #2D2D2D;
+    padding: 25px 0 !important;
     z-index: 3;
     position: relative;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, .5);
+    background: #FFFFFF;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
 }
 
 .navbar-dark .navbar-nav .active > .nav-link:before, .navbar-dark .navbar-nav .nav-link.active:before, .navbar-dark .navbar-nav .nav-link.show:before, .navbar-dark .navbar-nav .show > .nav-link:before {
