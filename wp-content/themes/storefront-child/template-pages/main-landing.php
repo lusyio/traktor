@@ -10,7 +10,7 @@ Template Post Type: post, page, product
 </div>
 </div>
 <div class="main-after-header">
-    <div class="container">
+    <div class="container main-after-header__container">
         <div class="row">
             <div class="col-lg-5 col-12">
                 <h1 class="main-after-header__title">Продажа запчастей</h1>
@@ -24,6 +24,53 @@ Template Post Type: post, page, product
                         <button class="btn btn-traktor-primary">Оформить заявку</button>
                         <p class="card-traktor__oferta">Нажимая кнопку “Оформить заявку” вы даете согласие на обработку
                             своих персональных данных</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container main-parts">
+        <div class="row">
+            <div class="col-lg-4">
+                <h2 class="main-parts__title">Запчасти по принадлежности к технике:</h2>
+            </div>
+        </div>
+        <img class="main-parts__img" src="/wp-content/themes/storefront-child/images/main-parts.png" alt="">
+        <div class="row">
+            <div class="col-lg-4 col-12">
+                <div class="card-parts">
+                    <div class="card-parts__body">
+                        <div>
+                            <p class="card-parts__category">запчасти для минитрактора</p>
+                            <p class="card-parts__title">TZ-4k-14 (MT8-132)</p>
+                            <a class="card-parts__link" href="">Перейти в каталог</a>
+                        </div>
+                        <img src="/wp-content/themes/storefront-child/images/traktor.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-12">
+                <div class="card-parts">
+                    <div class="card-parts__body">
+                        <div>
+                            <p class="card-parts__category">запчасти для минитрактора</p>
+                            <p class="card-parts__title">TZ-4k-14 (MT8-132)</p>
+                            <a class="card-parts__link" href="">Перейти в каталог</a>
+                        </div>
+                        <img src="/wp-content/themes/storefront-child/images/traktor.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-12">
+                <div class="card-parts">
+                    <div class="card-parts__body">
+                        <div>
+                            <p class="card-parts__category">запчасти для минитрактора</p>
+                            <p class="card-parts__title">TZ-4k-14 (MT8-132)</p>
+                            <a class="card-parts__link" href="">Перейти в каталог</a>
+                        </div>
+                        <img src="/wp-content/themes/storefront-child/images/traktor.jpg" alt="">
                     </div>
                 </div>
             </div>
