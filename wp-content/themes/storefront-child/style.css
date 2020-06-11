@@ -9,14 +9,13 @@ Author URI:   https://richbee.ru/
 
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;700;800;900&family=Montserrat:wght@500&display=swap');
 
 html body {
     font-family: 'Alegreya', serif !important;
-
 }
 
-html header{
+html header {
     font-family: 'Roboto', sans-serif;
 }
 
@@ -218,6 +217,105 @@ header .header-menu ul li:first-of-type a {
 header .s-header__basket-wr {
     margin: 0 !important;
     align-self: flex-end;
+}
+
+.main-after-header {
+    padding-top: 55px;
+    background: url("/wp-content/themes/storefront-child/images/main-after-header.jpg") top right no-repeat;
+    background-size: contain;
+}
+
+.main-after-header__title {
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 140%;
+    color: #222222;
+    margin-bottom: 0;
+    padding: 0;
+    margin-top: 0;
+    text-transform: uppercase;
+    margin-left: 40px;
+}
+
+body .main-after-header .main-after-header__info {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    color: #222222;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    margin-left: 40px;
+    max-width: 324px;
+}
+
+.card-traktor {
+    background: #FFFFFF;
+    border: 1px solid #EEEEEE;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    padding: 6px 10px 14px;
+}
+
+.card-traktor .card-traktor__body {
+    border: 1px solid #F5F5F5;
+    padding: 24px 35px;
+}
+
+.card-traktor .card-traktor__title {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 33px;
+    margin-bottom: 15px;
+    color: #222222;
+
+}
+
+.card-traktor .card-traktor__info {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 120%;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+html body .input-traktor-primary {
+    border: 1px solid #D7D8DC;
+    border-radius: 10px;
+    padding: 17px 29px;
+    width: 100%;
+    margin-bottom: 15px;
+    background: #fff;
+}
+
+html body .input-traktor-primary::placeholder {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #878787;
+}
+
+html body .btn.btn-traktor-primary {
+    background: #598468;
+    border-radius: 10px;
+
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+    padding: 18px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.card-traktor .card-traktor__oferta {
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 140%;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 0;
 }
 
 
