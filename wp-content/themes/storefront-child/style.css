@@ -545,10 +545,12 @@ html .card-parts .card-parts__title {
     bottom: 0;
     margin-left: auto;
     margin-right: auto;
-    width: 539px;
+    width: 594px;
     height: 334px;
     overflow: hidden;
     background-color: #000;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .start-video:hover {
@@ -787,10 +789,6 @@ header#masthead {
     margin: 0 1rem;
     color: #fff !important;
     transition: color .1s cubic-bezier(.4, 0, .2, 1);
-}
-
-.navbar-expand-xl .navbar-collapse .navbar-nav:hover .nav-item:not(.active) a {
-    color: #9e9e9e !important;
 }
 
 .navbar-dark .navbar-collapse .navbar-nav .nav-item:not(.active) a:hover {

@@ -107,7 +107,7 @@ Template Post Type: post, page, product
                     function onYouTubePlayerAPIReady() {
                         player = new YT.Player('ytplayer', {
                             height: '334',
-                            width: '539',
+                            width: '594',
                             videoId: '<?= get_field( 'player_link'); ?>'
                         });
                     }
