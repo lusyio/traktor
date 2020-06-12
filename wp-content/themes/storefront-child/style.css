@@ -324,6 +324,7 @@ html body .btn.btn-traktor-primary {
 
 .main-parts {
     position: relative;
+    margin-bottom: 80px;
 }
 
 .main-parts .main-parts__title {
@@ -376,7 +377,7 @@ html .card-parts .card-parts__title {
     color: #000000;
 }
 
-.card-parts .card-parts__link{
+.card-parts .card-parts__link {
     font-weight: bold;
     font-size: 18px;
     line-height: 16px;
@@ -387,11 +388,124 @@ html .card-parts .card-parts__title {
     left: 30px;
 }
 
-.card-parts img{
+.card-parts img {
     max-width: 145px;
     place-self: flex-end;
 }
 
+.main-delivery {
+    margin-bottom: 150px;
+    position: relative;
+}
+
+.main-delivery .main-delivery__title {
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: right;
+    color: #000000;
+    margin-bottom: 83px;
+    margin-right: 40px;
+}
+
+.main-delivery .main-delivery__img {
+    position: absolute;
+    top: -12rem;
+    left: -10rem;
+    z-index: 0;
+}
+
+.card-delivery {
+    position: relative;
+    z-index: 1;
+    background-color: #fff !important;
+    border: 1px solid #EEEEEE;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.card-delivery.card-1 {
+    background: url("/wp-content/themes/storefront-child/images/delivery-card-1.jpg") right bottom no-repeat;
+    background-size: 254px 279px;
+    height: 320px;
+    margin-top: -70px;
+}
+
+.card-delivery.card-2 {
+    background: url("/wp-content/themes/storefront-child/images/delivery-card-2.jpg") right bottom no-repeat;
+    background-size: 186px 186px;
+    height: 320px;
+}
+
+.card-delivery.card-3 {
+    background: url("/wp-content/themes/storefront-child/images/delivery-card-3.jpg") right bottom no-repeat;
+    background-size: 239px 299px;
+    background-position-x: 90%;
+    height: 320px;
+    margin-top: -70px;
+}
+
+.card-delivery.card-4 {
+    background: url("/wp-content/themes/storefront-child/images/delivery-card-4.jpg") right center no-repeat;
+    background-size: 176px 176px;
+    background-position-x: 90%;
+    height: 250px;
+}
+
+.card-delivery.card-1 .card-delivery__body {
+    padding: 80px 50px;
+}
+
+.card-delivery.card-2 .card-delivery__body {
+    padding: 50px 45px;
+}
+
+.card-delivery.card-3 .card-delivery__body {
+    padding: 35px 40px;
+}
+
+.card-delivery.card-4 .card-delivery__body {
+    padding: 35px 40px;
+}
+
+.card-delivery .card-delivery__title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+    margin-bottom: 25px;
+    max-width: 248px;
+}
+
+.card-delivery .card-delivery__info {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: #000000;
+    margin-bottom: 0;
+    max-width: 254px;
+}
+
+.card-delivery .card-delivery__link {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+    text-decoration-line: underline;
+
+    color: #177638;
+    max-width: 190px;
+}
+
+.card-delivery.card-2 .card-delivery__link, .card-delivery.card-3 .card-delivery__link, .card-delivery.card-4 .card-delivery__link {
+    position: absolute;
+    bottom: 30px;
+    left: 40px;
+}
+
+.card-delivery.card-2 .card-delivery__link {
+    left: 45px;
+}
 
 /*--------------------------------------------------------------
 # RADIO BTN
