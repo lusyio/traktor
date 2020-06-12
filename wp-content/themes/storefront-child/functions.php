@@ -372,7 +372,7 @@ function add_delivery_block($img = true)
                     <div class="card-delivery__body">
                         <p class="card-delivery__title">Не просто продаем, а занимаемся ремонтом</p>
                         <p class="card-delivery__info">И снимаем видео о частых проблемах и поломках</p>
-                        <a class="card-delivery__link" href="#">Смотреть видео</a>
+                        <a class="card-delivery__link" href=" ' . get_field('youtube_link', 20) . ' ">Смотреть видео</a>
                     </div>
                 </div>
             </div>

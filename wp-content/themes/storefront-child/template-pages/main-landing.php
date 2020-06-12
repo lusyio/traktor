@@ -78,6 +78,53 @@ Template Post Type: post, page, product
     </div>
 
     <?= add_delivery_block() ?>
+
+    <div class="container youtube-block">
+        <div class="row">
+            <div class="col-lg-7 col-12">
+                <div class="thumbnail_container position-relative text-center">
+                    <div id="player">
+                        <div id="ytplayer"></div>
+
+                    </div>
+                    <div class="thumbnail-block" style="background-image: url('<?= get_field( 'thumbnail_block'); ?>');">
+                        <a class="start-video"><img alt="" src="/wp-content/themes/storefront-child/svg/youtube-start.svg"></a>
+                    </div>
+                </div>
+                <script>
+                    // Load the IFrame Player API code asynchronously.
+                    let tag = document.createElement('script');
+                    tag.src = "https://www.youtube.com/player_api";
+                    let firstScriptTag = document.getElementsByTagName('script')[0];
+                    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+                    // YouTube player after the API code downloads.
+                    let player;
+
+                    function onYouTubePlayerAPIReady() {
+                        player = new YT.Player('ytplayer', {
+                            height: '334',
+                            width: '539',
+                            videoId: '<?= get_field( 'player_link'); ?>'
+                        });
+                    }
+
+                    jQuery(document).on('click', '.start-video', function () {
+                        jQuery("#player").show();
+                        jQuery(".thumbnail-block").fadeOut(350);
+                        player.playVideo();
+                    });
+
+                </script>
+            </div>
+            <div class="col-lg-5 col-12">
+                <p class="youtube-block__title">Посмотрите наш канал на Youtube</p>
+                <p class="youtube-block__info">Там вы сможете найти ответы на распространенные проблемы и поломки,
+                    связанные с тракторами ТZ-4К-14, MF-70, Terra Vari</p>
+                <a class="youtube-block__link" href="<?= get_field( 'youtube_link'); ?>">Перейти на Youtube</a>
+            </div>
+        </div>
+    </div>
 </div>
 
 

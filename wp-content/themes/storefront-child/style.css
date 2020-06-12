@@ -507,6 +507,80 @@ html .card-parts .card-parts__title {
     left: 45px;
 }
 
+.start-video {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    padding: 12px;
+    opacity: .5;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.thumbnail-block, #player > iframe {
+    background: #FFFFFF;
+    box-sizing: border-box;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+}
+
+.thumbnail-block {
+    position: absolute;
+    top: 0;
+    display: block;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 539px;
+    height: 334px;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.start-video:hover {
+    opacity: 1;
+}
+
+.youtube-block {
+    margin-bottom: 168px;
+}
+
+.youtube-block .youtube-block__title {
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 42px;
+
+    color: #000000;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    max-width: 270px;
+}
+
+.youtube-block .youtube-block__info {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 130%;
+    color: #000000;
+    margin-bottom: 40px;
+    max-width: 360px;
+}
+
+.youtube-block .youtube-block__link {
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 33px;
+    text-decoration-line: underline;
+
+    color: #177638;
+}
+
 /*--------------------------------------------------------------
 # RADIO BTN
 --------------------------------------------------------------*/
