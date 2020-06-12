@@ -398,6 +398,11 @@ html .card-parts .card-parts__title {
     position: relative;
 }
 
+.main-delivery.product-delivery{
+    margin-bottom: 46px;
+    margin-top: 150px;
+}
+
 .main-delivery .main-delivery__title {
     font-weight: bold;
     font-size: 36px;
@@ -1085,6 +1090,31 @@ html .after-footer .after-footer__copyright {
     color: #FFFFFF;
     margin-bottom: 0;
     align-self: center;
+}
+
+.woocommerce-product-gallery__wrapper > div{
+    text-align: center;
+    background: #FFFFFF;
+    border: 1px solid #EEEEEE;
+    box-sizing: border-box;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+}
+
+.woocommerce-product-gallery__trigger{
+    display: none;
+}
+
+.single-product div.product{
+    overflow: unset;
+}
+
+.storefront-full-width-content.single-product div.product .woocommerce-product-gallery{
+    float: unset;
+}
+
+.storefront-full-width-content.single-product div.product .summary{
+    float: unset;
 }
 
 .site-footer a:not(.button):not(.components-button){

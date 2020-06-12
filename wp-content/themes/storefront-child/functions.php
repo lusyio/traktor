@@ -327,20 +327,20 @@ function jk_related_products_args($args)
     return $args;
 }
 
-function add_delivery_block($img = true)
+function add_delivery_block($img = true, $cls = false)
 {
     $imgHtml = '';
     $img
-        ? $imgHtml = '<img class="main-delivery__img" src="/wp-content/themes/storefront-child/images/main-delivery.png" alt="">'
+        ? $imgHtml = '<img class="main-delivery__img" src="/wp-content/themes/storefront-child/images/main-delivery.png" alt="">
+                <div class="row">
+                <div class="col-lg-4 col-12 offset-lg-8 offset-0">
+                    <h3 class="main-delivery__title">Обеспечиваем комфортные условия работы</h3>
+                </div>
+                 </div>'
         : $imgHtml = '';
     return
-        '<div class="container main-delivery">
+        '<div class="container main-delivery ' . $cls . '">
         ' . $imgHtml . '
-        <div class="row">
-            <div class="col-lg-4 col-12 offset-lg-8 offset-0">
-                <h3 class="main-delivery__title">Обеспечиваем комфортные условия работы</h3>
-            </div>
-        </div>
         <div class="row">
             <div class="col-lg-5 offset-lg-1 col-12 offset-0">
                 <div class="card-delivery card-1">
@@ -379,4 +379,3 @@ function add_delivery_block($img = true)
         </div>
     </div>';
 }
-
