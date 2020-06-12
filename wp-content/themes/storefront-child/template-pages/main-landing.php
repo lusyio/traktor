@@ -77,50 +77,7 @@ Template Post Type: post, page, product
         </div>
     </div>
 
-    <div class="container main-delivery">
-        <img class="main-delivery__img" src="/wp-content/themes/storefront-child/images/main-delivery.png" alt="">
-        <div class="row">
-            <div class="col-lg-4 col-12 offset-lg-8 offset-0">
-                <h3 class="main-delivery__title">Обеспечиваем комфортные условия работы</h3>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-5 offset-lg-1 col-12 offset-0">
-                <div class="card-delivery card-1">
-                    <div class="card-delivery__body">
-                        <p class="card-delivery__title">Бесплатная доставка до транспортных компаний</p>
-                        <a class="card-delivery__link" href="#">Способы доставки</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-5 col-12">
-                <div class="card-delivery card-2">
-                    <div class="card-delivery__body">
-                        <p class="card-delivery__title">Возможна отправка наложенным платежом</p>
-                        <a class="card-delivery__link" href="#">Способы оплаты</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-12">
-                <div class="card-delivery card-3">
-                    <div class="card-delivery__body">
-                        <p class="card-delivery__title">Консультируем по любым вопросам</p>
-                        <p class="card-delivery__info">Вы можете посмотреть ответы на самые распространенные вопросы</p>
-                        <a class="card-delivery__link" href="#">Ответы на частые вопросы по неисправностям</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-12">
-                <div class="card-delivery card-4">
-                    <div class="card-delivery__body">
-                        <p class="card-delivery__title">Не просто продаем, а занимаемся ремонтом</p>
-                        <p class="card-delivery__info">И снимаем видео о частых проблемах и поломках</p>
-                        <a class="card-delivery__link" href="#">Смотреть видео</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?= add_delivery_block() ?>
 </div>
 
 
