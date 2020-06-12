@@ -15,76 +15,57 @@
 <?php do_action('storefront_before_footer'); ?>
 
 <footer id="colophon" class="site-footer" role="contentinfo">
-    <div class="container pt-3 pb-3">
-        <div class="row">
-            <div class="col-12 text-center col-lg-4 text-lg-left footer-logo mb-lg-0 mb-4">
-                <div class="site-info">
-                    <a class="site-title"
-                       href="<?php echo esc_url(home_url('/')); ?>"><?php esc_url(bloginfo('name')); ?>
-                        <p class="mb-0 site-description"><?php bloginfo('description'); ?></p>
-                    </a>
-                    <p class="mb-0 footer-credits d-lg-block d-none">
-                        <a class="credits" href="https://richbee.ru/" target="_blank"><img
-                                    src="/wp-content/themes/storefront-child/svg/Richbee-black.svg" alt=""></a>
-                    </p>
-
-                </div><!-- close .site-info -->
-            </div>
-            <div class="col-12 text-center col-lg-5 text-lg-left mb-lg-0 mb-4">
-                <div class="row">
-
-                    <?php
-                    if ($menu_items = wp_get_nav_menu_items('second')) {
-                        $menu_list = '';
-                        echo '<div class="col-12 text-center col-md-6 text-lg-left">';
-                        echo '<div class="footer-menu">';
-                        echo '<ul class="menu" id="menu-second">';
-                        $menu_number = 0;
-                        $half_count = ceil(count($menu_items) / 2);
-                        foreach ((array)$menu_items as $key => $menu_item) {
-                            $title = $menu_item->title; // заголовок элемента меню (анкор ссылки)
-                            $url = $menu_item->url; // URL ссылки
-                            if ($menu_number != $half_count) {
-                                echo '<li class="mb-lg-3 mb-3"><a href="' . $url . '">' . $title . '</a></li>';
-                            } else {
-                                echo '</ul>';
-                                echo '</div>';
-                                echo '</div>';
-                                echo '<div class="col-12 text-center col-md-6 text-lg-left">';
-                                echo '<div class="footer-menu">';
-                                echo '<ul class="menu" id="menu-second_1">';
-                                echo '<li class="mb-lg-3 mb-3"><a href="' . $url . '">' . $title . '</a></li>';
-                            }
-                            $menu_number++;
-                        }
-                        echo '</ul>';
-                        echo '</div>';
-                        echo '</div>';
-                    }
-                    ?>
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-contact">
+                <div>
+                    <a class="footer-contact__phone" href="tel:8 (916) 388-57-91">8 (916) 388-57-91</a>
+                    <p class="footer-contact__title">WhatsApp и Viber</p>
+                    <p class="footer-contact__info">Только для письма и обмена фотографиями</p>
+                </div>
+                <div>
+                    <a class="footer-contact__phone" href="tel:8 (926) 212-91-03">8 (926) 212-91-03</a>
+                    <p class="footer-contact__title">shop@minitraktorcz.ru</p>
+                    <p class="footer-contact__info">Понедельник - Пятница с 9:00 до 18:00</p>
                 </div>
             </div>
-            <div class="col-12 footer-socials text-center col-lg-3 text-lg-right">
-                <div class="mb-2">
-                    <a class="text-decoration-none socials" href="#"><img
-                                src="/wp-content/themes/storefront-child/svg/vk.svg" alt=""></a>
-                    <a class="text-decoration-none ml-3 socials" href="#"><img
-                                src="/wp-content/themes/storefront-child/svg/instagram.svg" alt=""></a>
-                </div>
-                <p class="mb-0">
-                    <a class="footer-terms" href="/terms/">Политика конфиденциальности</a>
-                </p>
-                <p class="footer-name-p">
-                    &copy; <?php echo '<a class="footer-name" href="' . home_url() . '">' . get_bloginfo('name') . '</a>'; ?>
-                    , 2015 - <?php echo date('Y'); ?>
-                </p>
-                <p class="mb-0 footer-credits d-lg-none d-block">
-                    <a class="credits" href="https://richbee.ru/"
-                       target="_blank"><img src="/wp-content/themes/storefront-child/svg/Richbee-black.svg" alt=""></a>
-                </p>
-            </div>
+            <?php
+            if ($menu_items = wp_get_nav_menu_items('second')) {
+                echo '<ul class="footer-menu" id="menu-second">';
+                $half_count = ceil(count($menu_items) / 2);
+                foreach ((array)$menu_items as $key => $menu_item) {
+                    $title = $menu_item->title; // заголовок элемента меню (анкор ссылки)
+                    $url = $menu_item->url; // URL ссылки
+                    echo '<li><a href="' . $url . '">' . $title . '</a></li>';
+                }
+                echo '</ul>';
+            }
+            ?>
         </div>
-
+    </div>
+    <hr class="footer-hr">
+    <div class="container">
+        <div class="after-footer">
+            <p class="after-footer__copyright">
+                <?= date('Y'); ?> &copy; <?= get_bloginfo('name') ?>
+            </p>
+            <?php
+            if ($menu_items = wp_get_nav_menu_items('additional')) {
+                echo '<ul class="after-footer__menu" id="menu-after-footer">';
+                foreach ((array)$menu_items as $key => $menu_item) {
+                    $title = $menu_item->title; // заголовок элемента меню (анкор ссылки)
+                    $url = $menu_item->url; // URL ссылки
+                    echo '<li><a href="' . $url . '">' . $title . '</a></li>';
+                }
+                echo '</ul>';
+            }
+            ?>
+            <p class="after-footer__richbee">
+                <a target="_blank" href="https://richbee.ru/">
+                    <img src="/wp-content/themes/storefront-child/svg/richbee-logo.svg" alt="">
+                </a>
+            </p>
+        </div>
     </div>
 
 

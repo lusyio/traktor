@@ -415,7 +415,7 @@ html .card-parts .card-parts__title {
     z-index: 0;
 }
 
-.main-delivery__img-2{
+.main-delivery__img-2 {
     position: absolute;
     bottom: -15rem;
     right: -6rem;
@@ -994,24 +994,128 @@ header#masthead {
     text-decoration: none;
 }
 
+footer.site-footer {
+    background: #3C3C3B;
+    padding: 40px 0 30px;
+}
+
+.footer-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-contact > div:first-of-type {
+    margin-right: 40px;
+}
+
+html .footer-contact .footer-contact__phone {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    color: #FFFFFF;
+    display: table;
+    margin-bottom: 5px;
+}
+
+.footer-contact .footer-contact__title {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: #FFFFFF;
+    margin-bottom: 5px;
+}
+
+.footer-contact .footer-contact__info {
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 18px;
+    color: #BFBFBF;
+    margin-bottom: 0;
+}
+
+.footer-menu {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+    align-items: center;
+}
+
+.footer-menu li a {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 24px;
+    color: #FFFFFF;
+    margin: 0 22px;
+}
+
+.footer-menu li:last-of-type a {
+    margin-right: 0;
+}
+
+.footer-hr {
+    border: 0;
+    border-top: 1px solid #4D4D4D;
+    margin: 30px 0;
+}
+
+.after-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+html .after-footer .after-footer__copyright {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+    margin-bottom: 0;
+    align-self: center;
+}
+
+.site-footer a:not(.button):not(.components-button){
+    color: #FFFFFF;
+}
+
+.after-footer .after-footer__menu {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+    align-items: center;
+}
+
+.after-footer .after-footer__menu li a {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    color: #FFFFFF;
+    margin: 0 10px;
+}
+
+.after-footer .after-footer__richbee {
+    margin-bottom: 0;
+}
+
 .site-info {
     padding: 0;
-}
-
-.footer-menu ul {
-    list-style-type: none;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 24px;
-    color: #EEEEEE;
-    padding: 0;
-    margin-left: 0;
-}
-
-footer.site-footer {
-    padding-top: 80px;
-    padding-bottom: 50px;
-    font-size: 1rem;
 }
 
 /*--------------------------------------------------------------
