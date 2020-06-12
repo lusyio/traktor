@@ -398,9 +398,30 @@ html .card-parts .card-parts__title {
     position: relative;
 }
 
-.main-delivery.product-delivery{
+.main-delivery.product-delivery {
     margin-bottom: 46px;
     margin-top: 150px;
+}
+
+.woocommerce-product-details__short-description p {
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 120%;
+    color: #000000;
+    margin-bottom: 40px;
+}
+
+.product-container {
+    margin-left: 25px;
+}
+
+h1.entry-title.product_title {
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 49px;
+    text-align: left;
+    color: #000000;
+    margin-bottom: 5px;
 }
 
 .main-delivery .main-delivery__title {
@@ -768,19 +789,19 @@ header#masthead {
 }
 
 .basket-btn__counter {
-    background: #F25E2F;
+    background: #598468;
     border: 0;
     border-radius: 50%;
-    font-weight: normal;
+    font-weight: bold;
     font-size: 10px;
-    line-height: 12px;
-    color: #EEEEEE;
+    line-height: 11px;
     position: absolute;
+    color: #FFFFFF;
     padding: 2px;
     min-width: 16px;
     text-align: center;
-    right: -35%;
-    top: -35%;
+    right: -30%;
+    top: -70%;
 }
 
 .storefront-sticky-add-to-cart {
@@ -1092,7 +1113,7 @@ html .after-footer .after-footer__copyright {
     align-self: center;
 }
 
-.woocommerce-product-gallery__wrapper > div{
+.woocommerce-product-gallery__wrapper > div {
     text-align: center;
     background: #FFFFFF;
     border: 1px solid #EEEEEE;
@@ -1101,23 +1122,23 @@ html .after-footer .after-footer__copyright {
     padding: 40px;
 }
 
-.woocommerce-product-gallery__trigger{
+.woocommerce-product-gallery__trigger {
     display: none;
 }
 
-.single-product div.product{
+.single-product div.product {
     overflow: unset;
 }
 
-.storefront-full-width-content.single-product div.product .woocommerce-product-gallery{
+.storefront-full-width-content.single-product div.product .woocommerce-product-gallery {
     float: unset;
 }
 
-.storefront-full-width-content.single-product div.product .summary{
+.storefront-full-width-content.single-product div.product .summary {
     float: unset;
 }
 
-.site-footer a:not(.button):not(.components-button){
+.site-footer a:not(.button):not(.components-button) {
     color: #FFFFFF;
 }
 
@@ -1277,27 +1298,165 @@ ul.products li.product:hover {
 }
 
 input[type='text'], input[type='number'], input[type='email'], input[type='tel'], input[type='url'], input[type='password'], input[type='search'], textarea, .input-text {
-    border-radius: 4px 4px 0px 0px;
-    border-bottom-color: #000000;
-    min-height: 56px;
     overflow: hidden;
-    font-size: 1rem;
-    line-height: 1.75rem;
-    font-weight: 400;
     letter-spacing: .009375em;
-    padding: 15px 16px 13px;
-    border-bottom: 1px solid;
     box-shadow: none;
+
+    color: #000000;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+
+    border: 1px solid #D7D8DC;
+    border-radius: 10px;
+    padding: 17px;
+    margin-bottom: 15px;
+    background: #fff;
 }
 
 button, input[type='button'], input[type='reset'], input[type='submit'], .button, .wc-block-grid__products .wc-block-grid__product .wp-block-button__link, .added_to_cart {
-    min-height: 58px;
-    padding: 1.1rem 1.5rem;
     -webkit-transition: 200ms;
     -moz-transition: 200ms;
     -ms-transition: 200ms;
     -o-transition: 200ms;
     transition: 200ms;
+
+    background: #598468;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+    padding: 18px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.product_meta, .product_meta a {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 24px;
+    color: #858585;
+}
+
+.product_meta {
+    margin-bottom: 25px;
+}
+
+html .product-info {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+button.alt, input[type="button"].alt, input[type="reset"].alt, input[type="submit"].alt, .button.alt, .widget-area .widget a.button.alt {
+    background: #598468;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+    padding: 18px;
+    width: 100%;
+    max-width: 260px;
+    margin-bottom: 15px;
+}
+
+.cart {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+html .cart .price {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 39px;
+    color: #000000;
+    align-self: center;
+    margin-right: 45px;
+    margin-bottom: 0;
+}
+
+html .cart input.qty {
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    padding: 9px;
+    width: 100%;
+    max-width: 40px;
+    height: 40px;
+    margin-bottom: 0;
+    text-align: center;
+    margin-right: 15px;
+}
+
+html .cart .single_add_to_cart_button {
+    margin-bottom: 0;
+    align-self: center;
+}
+
+html .cart .qty_button {
+    transition: 150ms ease-in-out;
+    margin-right: 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: #D7D8DC;
+    border: 1px solid #D7D8DC;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background: transparent;
+    max-width: 40px;
+    height: 40px;
+    padding: 9px;
+    align-self: center;
+    margin-bottom: 0;
+}
+
+html .cart .qty_button:hover {
+    border: 1px solid #000000;
+    color: #000000;
+}
+
+html .cart .qty_button.plus {
+    margin-right: 0;
+}
+
+
+.cart .quantity {
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    margin-right: 30px;
+    flex-grow: 1;
+}
+
+html .cart input.qty::-webkit-outer-spin-button,
+html .cart input.qty::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+html .cart input[type=number].qty {
+    -moz-appearance: textfield;
 }
 
 .form-row.woocommerce-validated input.input-text {
