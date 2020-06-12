@@ -415,6 +415,13 @@ html .card-parts .card-parts__title {
     z-index: 0;
 }
 
+.main-delivery__img-2{
+    position: absolute;
+    bottom: -15rem;
+    right: -6rem;
+    z-index: 0;
+}
+
 .card-delivery {
     position: relative;
     z-index: 1;

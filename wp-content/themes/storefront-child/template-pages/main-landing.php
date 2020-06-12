@@ -76,9 +76,12 @@ Template Post Type: post, page, product
             </div>
         </div>
     </div>
-
+</div>
+<div class="position-relative">
+    <img class="main-delivery__img-2" src="/wp-content/themes/storefront-child/images/main-delivery-2.jpg" alt="">
     <?= add_delivery_block() ?>
-
+</div>
+<div>
     <div class="container youtube-block">
         <div class="row">
             <div class="col-lg-7 col-12">
