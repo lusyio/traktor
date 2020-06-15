@@ -502,3 +502,80 @@ function get_products_by_category_slug($slug = '')
     endforeach;
     return ob_get_clean();
 }
+
+function get_categories_list()
+{
+    $args = array(
+        'taxonomy' => "product_cat",
+    );
+    $categories = get_terms($args);
+    ob_start();
+    ?>
+    <div class="row">
+        <?php foreach ($categories as $category):
+            if ($category->parent === 0) :
+                $thumbnail_id = get_term_meta($category->term_id, 'thumbnail_id', true);
+                $image = wp_get_attachment_url($thumbnail_id); ?>
+                <div class="col-lg-4 col-12">
+                    <div class="card-parts">
+                        <div class="card-parts__body">
+                            <div>
+                                <p class="card-parts__category"><?= $category->name ?></p>
+                                <p class="card-parts__title"><?= $category->description ?></p>
+                                <a class="card-parts__link"
+                                   href="<?= get_term_link($category->term_id, 'product_cat') ?>">Перейти в каталог</a>
+                            </div>
+                            <img src="<?= $image ?>" alt="<?= $category->name ?>">
+                        </div>
+                    </div>
+                </div>
+            <?php
+            endif;
+        endforeach; ?>
+    </div>
+    <?php
+    return ob_get_clean();
+}
+
+function woocommerce_content()
+{
+    if (is_singular('product')) {
+
+        while (have_posts()) :
+            the_post();
+            wc_get_template_part('content', 'single-product');
+        endwhile;
+
+    } else {
+        ?>
+
+        <?php if (apply_filters('woocommerce_show_page_title', true)) : ?>
+
+            <p class="catalog-title">Умная фильтрация</p>
+            <p class="catalog-info">Выберите технику и группу</p>
+
+        <?php endif; ?>
+
+        <?php do_action('woocommerce_archive_description'); ?>
+
+        <?php if (woocommerce_product_loop()) : ?>
+
+            <?php do_action('woocommerce_before_shop_loop'); ?>
+
+            <?php woocommerce_product_loop_start(); ?>
+
+            <?php if (wc_get_loop_prop('total')) : ?>
+                <?php the_post(); ?>
+                <?php wc_get_template_part('content', 'product_cat'); ?>
+            <?php endif; ?>
+
+            <?php woocommerce_product_loop_end(); ?>
+
+            <?php do_action('woocommerce_after_shop_loop'); ?>
+
+        <?php
+        else :
+            do_action('woocommerce_no_products_found');
+        endif;
+    }
+}

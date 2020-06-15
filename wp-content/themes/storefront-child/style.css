@@ -369,12 +369,18 @@ html body .btn.btn-traktor-primary {
 }
 
 html .card-parts .card-parts__title {
-    font-family: 'Montserrat', SansSerif;
+    font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 800;
     font-size: 28px;
-    line-height: 34px;
+    line-height: 24px;
     color: #000000;
+}
+
+html .card-parts .card-parts__title small {
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 800;
 }
 
 .card-parts .card-parts__link {
@@ -1508,7 +1514,7 @@ html .product-category .woocommerce-loop-category__title {
     background-size: 146px 90px;
 }
 
-.category-card.non-active{
+.category-card.non-active {
     filter: grayscale(1);
 }
 
@@ -1545,11 +1551,42 @@ html .product-category .woocommerce-loop-category__title {
     font-style: normal;
     font-weight: 800;
     font-size: 28px;
-    line-height: 34px;
+    line-height: 24px;
 
     color: #000000;
     margin-bottom: 0;
     max-width: 140px;
+}
+
+.category-card .category-card__description small {
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.catalog-title {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+
+    color: #000000;
+    margin-bottom: 4px;
+}
+
+.storefront-sorting{
+    display: none;
+}
+
+.catalog-info {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #8F8F8F;
+    margin-bottom: 25px;
 }
 
 .subcategory-list li a {
@@ -1559,7 +1596,7 @@ html .product-category .woocommerce-loop-category__title {
     color: #000000;
 }
 
-.subcategory-list li.active a, .subcategory-list li.active span{
+.subcategory-list li.active a, .subcategory-list li.active span {
     font-weight: bold;
 }
 

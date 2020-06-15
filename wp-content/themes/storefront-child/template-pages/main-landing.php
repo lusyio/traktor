@@ -37,44 +37,7 @@ Template Post Type: post, page, product
             </div>
         </div>
         <img class="main-parts__img" src="/wp-content/themes/storefront-child/images/main-parts.png" alt="">
-        <div class="row">
-            <div class="col-lg-4 col-12">
-                <div class="card-parts">
-                    <div class="card-parts__body">
-                        <div>
-                            <p class="card-parts__category">запчасти для минитрактора</p>
-                            <p class="card-parts__title">TZ-4k-14 (MT8-132)</p>
-                            <a class="card-parts__link" href="">Перейти в каталог</a>
-                        </div>
-                        <img src="/wp-content/themes/storefront-child/images/traktor.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-12">
-                <div class="card-parts">
-                    <div class="card-parts__body">
-                        <div>
-                            <p class="card-parts__category">запчасти для минитрактора</p>
-                            <p class="card-parts__title">TZ-4k-14 (MT8-132)</p>
-                            <a class="card-parts__link" href="">Перейти в каталог</a>
-                        </div>
-                        <img src="/wp-content/themes/storefront-child/images/traktor.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-12">
-                <div class="card-parts">
-                    <div class="card-parts__body">
-                        <div>
-                            <p class="card-parts__category">запчасти для минитрактора</p>
-                            <p class="card-parts__title">TZ-4k-14 (MT8-132)</p>
-                            <a class="card-parts__link" href="">Перейти в каталог</a>
-                        </div>
-                        <img src="/wp-content/themes/storefront-child/images/traktor.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?= get_categories_list() ?>
     </div>
 </div>
 <div class="position-relative">
