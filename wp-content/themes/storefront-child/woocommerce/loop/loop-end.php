@@ -28,14 +28,21 @@ $parentCategory = get_term($parentCatsId[0], 'product_cat');
 <div class="row">
     <?php if ($activeCat->parent === 0): ?>
         <div class="col-12">
-            <p class="category-filter-title">Показаны <?= $activeCat->name ?> <strong><?= $activeCat->description ?></strong></p>
+            <p class="category-filter-title">Показаны <?= $activeCat->name ?>
+                <strong><?= $activeCat->description ?></strong></p>
         </div>
     <?php else: ?>
         <div class="col-12">
-            <p class="category-filter-title">Показаны <?= $parentCategory->name ?> <strong><?= $parentCategory->description ?></strong></p>
-            <?php if ($activeCat->parent !== 0): ?>
-                <p class="category-filter-title">в разделе <strong><?= $activeCat->name ?></strong></p>
-            <?php endif; ?>
+            <div class="category-filter-container">
+                <div>
+                    <p class="category-filter-title">Показаны <?= $parentCategory->name ?>
+                        <strong><?= $parentCategory->description ?></strong></p>
+                    <?php if ($activeCat->parent !== 0): ?>
+                        <p class="category-filter-title">в разделе <strong><?= $activeCat->name ?></strong></p>
+                    <?php endif; ?>
+                </div>
+                <a class="category-filter-reset" href="<?= get_term_link($parentCategory->term_id, 'product_cat')?>"><img src="/wp-content/themes/storefront-child/svg/reset-filter.svg" alt="reset">Сбросить</a>
+            </div>
         </div>
     <?php endif; ?>
     <div class="col-lg-3 col-12">

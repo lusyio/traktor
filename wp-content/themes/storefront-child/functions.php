@@ -249,7 +249,7 @@ add_filter('loop_shop_per_page', 'wg_view_all_products');
 
 function wg_view_all_products()
 {
-    return '9999';
+    return '5';
 }
 
 //Удаление сортировки
@@ -451,7 +451,6 @@ function woocommerce_subcats_from_parentcat_by_ID($parent_cat_ID, $active_cat_ID
         'taxonomy' => 'product_cat'
     );
 
-
     $subcats = get_categories($args);
     echo '<ul class="subcategory-list">';
     foreach ($subcats as $subcat) {
@@ -469,8 +468,13 @@ function woocommerce_subcats_from_parentcat_by_ID($parent_cat_ID, $active_cat_ID
 function get_products_by_category_slug($slug = '')
 {
     if ($slug) {
+        global $paged;
         $args = array(
             'category' => array($slug),
+            'limit' => -1,
+            'posts_per_page' => 9,
+            'pagination' => true,
+            'page' => $paged
         );
     } else {
         $args = [];
@@ -496,7 +500,8 @@ function get_products_by_category_slug($slug = '')
             </div>
         </div>
     <?php
-    endforeach;
+    endforeach; ?>
+    <?php
     return ob_get_clean();
 }
 
@@ -573,4 +578,18 @@ function woocommerce_content()
             do_action('woocommerce_no_products_found');
         endif;
     }
+}
+
+/**
+ * Change the breadcrumb
+ */
+add_filter('woocommerce_breadcrumb_defaults', 'new_woocommerce_breadcrumbs', 20);
+function new_woocommerce_breadcrumbs()
+{
+    return array(
+        'delimiter' => ' - ',
+        'wrap_before' => '<div class="new-storefront-breadcrumb"><div class="container"><div class="row"><div class="col-12"><nav class="woocommerce-breadcrumb">',
+        'wrap_after' => '</nav></div></div></div></div>',
+        'home' => _x('Home', 'breadcrumb', 'woocommerce'),
+    );
 }
