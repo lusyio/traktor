@@ -28,13 +28,17 @@ echo wc_get_stock_html($product); // WPCS: XSS ok.
 if ($product->is_in_stock()) : ?>
 
     <?php do_action('woocommerce_before_add_to_cart_form'); ?>
-
-    <p class="product-info">Вес: <?= get_field('product_weight') ?></p>
-    <p class="product-info">Номер в каталоге: №<?= get_field('catalog_number') ?></p>
+    <p class="product-in-stock">В наличии</p>
+    <?php if (get_field('product_weight') !== '') : ?>
+        <p class="product-info">Вес: <?= get_field('product_weight') ?></p>
+    <?php endif; ?>
+    <?php if (get_field('catalog_number') !== '') : ?>
+        <p class="product-info">Номер в каталоге: №<?= get_field('catalog_number') ?></p>
+    <?php endif; ?>
     <form class="cart"
           action="<?php echo esc_url(apply_filters('woocommerce_add_to_cart_form_action', $product->get_permalink())); ?>"
           method="post" enctype='multipart/form-data'>
-        <p class="<?php echo esc_attr( apply_filters( 'woocommerce_product_price_class', 'price' ) ); ?>"><?php echo $product->get_price_html(); ?></p>
+        <p class="<?php echo esc_attr(apply_filters('woocommerce_product_price_class', 'price')); ?>"><?php echo $product->get_price_html(); ?></p>
         <?php do_action('woocommerce_before_add_to_cart_button'); ?>
 
         <?php

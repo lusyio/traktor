@@ -380,58 +380,125 @@ function add_delivery_block($img = true, $cls = false)
     </div>';
 }
 
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
-add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 10 );
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
+add_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 10);
 
-add_action( 'wp_footer' , 'custom_quantity_fields_script' );
-function custom_quantity_fields_script(){
+add_action('wp_footer', 'custom_quantity_fields_script');
+function custom_quantity_fields_script()
+{
     ?>
     <script type='text/javascript'>
-        jQuery( function( $ ) {
-            if ( ! String.prototype.getDecimals ) {
-                String.prototype.getDecimals = function() {
+        jQuery(function ($) {
+            if (!String.prototype.getDecimals) {
+                String.prototype.getDecimals = function () {
                     var num = this,
                         match = ('' + num).match(/(?:\.(\d+))?(?:[eE]([+-]?\d+))?$/);
-                    if ( ! match ) {
+                    if (!match) {
                         return 0;
                     }
-                    return Math.max( 0, ( match[1] ? match[1].length : 0 ) - ( match[2] ? +match[2] : 0 ) );
+                    return Math.max(0, (match[1] ? match[1].length : 0) - (match[2] ? +match[2] : 0));
                 }
             }
             // Quantity "plus" and "minus" buttons
-            $( document.body ).on( 'click', '.plus, .minus', function() {
-                var $qty        = $( this ).closest( '.quantity' ).find( '.qty'),
-                    currentVal  = parseFloat( $qty.val() ),
-                    max         = parseFloat( $qty.attr( 'max' ) ),
-                    min         = parseFloat( $qty.attr( 'min' ) ),
-                    step        = $qty.attr( 'step' );
+            $(document.body).on('click', '.plus, .minus', function () {
+                var $qty = $(this).closest('.quantity').find('.qty'),
+                    currentVal = parseFloat($qty.val()),
+                    max = parseFloat($qty.attr('max')),
+                    min = parseFloat($qty.attr('min')),
+                    step = $qty.attr('step');
 
                 // Format values
-                if ( ! currentVal || currentVal === '' || currentVal === 'NaN' ) currentVal = 0;
-                if ( max === '' || max === 'NaN' ) max = '';
-                if ( min === '' || min === 'NaN' ) min = 0;
-                if ( step === 'any' || step === '' || step === undefined || parseFloat( step ) === 'NaN' ) step = 1;
+                if (!currentVal || currentVal === '' || currentVal === 'NaN') currentVal = 0;
+                if (max === '' || max === 'NaN') max = '';
+                if (min === '' || min === 'NaN') min = 0;
+                if (step === 'any' || step === '' || step === undefined || parseFloat(step) === 'NaN') step = 1;
 
                 // Change the value
-                if ( $( this ).is( '.plus' ) ) {
-                    if ( max && ( currentVal >= max ) ) {
-                        $qty.val( max );
+                if ($(this).is('.plus')) {
+                    if (max && (currentVal >= max)) {
+                        $qty.val(max);
                     } else {
-                        $qty.val( ( currentVal + parseFloat( step )).toFixed( step.getDecimals() ) );
+                        $qty.val((currentVal + parseFloat(step)).toFixed(step.getDecimals()));
                     }
                 } else {
-                    if ( min && ( currentVal <= min ) ) {
-                        $qty.val( min );
-                    } else if ( currentVal > 0 ) {
-                        $qty.val( ( currentVal - parseFloat( step )).toFixed( step.getDecimals() ) );
+                    if (min && (currentVal <= min)) {
+                        $qty.val(min);
+                    } else if (currentVal > 0) {
+                        $qty.val((currentVal - parseFloat(step)).toFixed(step.getDecimals()));
                     }
                 }
 
                 // Trigger change event
-                $qty.trigger( 'change' );
+                $qty.trigger('change');
             });
         });
     </script>
     <?php
+}
+
+add_action('wp', 'remove_zoom_lightbox_theme_support', 99);
+
+function remove_zoom_lightbox_theme_support()
+{
+    remove_theme_support('wc-product-gallery-zoom');
+}
+
+function woocommerce_subcats_from_parentcat_by_ID($parent_cat_ID, $active_cat_ID)
+{
+    $args = array(
+        'hierarchical' => 1,
+        'show_option_none' => '',
+        'hide_empty' => 0,
+        'parent' => $parent_cat_ID,
+        'taxonomy' => 'product_cat'
+    );
+
+
+    $subcats = get_categories($args);
+    echo '<ul class="subcategory-list">';
+    foreach ($subcats as $subcat) {
+        if ($active_cat_ID === $subcat->term_id) {
+            $active = 'active';
+        } else {
+            $active = '';
+        }
+        $link = get_term_link($subcat->slug, $subcat->taxonomy);
+        echo '<li class="' . $active . '"><a href="' . $link . '">' . $subcat->name . '</a> <span>' . $subcat->count . ' </span></li>';
+    }
+    echo '</ul>';
+}
+
+function get_products_by_category_slug($slug = '')
+{
+    if ($slug) {
+        $args = array(
+            'category' => array($slug),
+        );
+    } else {
+        $args = [];
+    }
+    $products = wc_get_products($args);
+    ob_start();
+    foreach ($products as $product):
+        $image_id = $product->get_image_id();
+        ?>
+        <div class="col-lg-4 col-sm-6 col-12">
+            <div class="product-card">
+                <div class="product-card__body">
+                    <img class="product-card__img"
+                         src="<?= wp_get_attachment_image_url($image_id, 'full'); ?>"
+                         alt="<?= $product->name; ?>">
+                    <h4 class="product-card__name"><?= $product->name ?></h4>
+                    <p>
+                        <span><?= $product->get_price_html(); ?> </span>
+                        <?= $product->is_in_stock() ? '<span class="product-card__in-stock">В наличии</span>' : '<span class="product-card__out-stock">Нет в наличии</span>' ?>
+                    </p>
+                    <a class="product-card__link" href="<?= $product->get_permalink() ?>">Подробнее</a>
+                </div>
+            </div>
+        </div>
+    <?php
+    endforeach;
+    return ob_get_clean();
 }
