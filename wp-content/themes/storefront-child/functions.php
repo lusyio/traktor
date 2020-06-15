@@ -400,7 +400,6 @@ function custom_quantity_fields_script()
                     return Math.max(0, (match[1] ? match[1].length : 0) - (match[2] ? +match[2] : 0));
                 }
             }
-            // Quantity "plus" and "minus" buttons
             $(document.body).on('click', '.plus, .minus', function () {
                 var $qty = $(this).closest('.quantity').find('.qty'),
                     currentVal = parseFloat($qty.val()),
@@ -408,13 +407,11 @@ function custom_quantity_fields_script()
                     min = parseFloat($qty.attr('min')),
                     step = $qty.attr('step');
 
-                // Format values
                 if (!currentVal || currentVal === '' || currentVal === 'NaN') currentVal = 0;
                 if (max === '' || max === 'NaN') max = '';
                 if (min === '' || min === 'NaN') min = 0;
                 if (step === 'any' || step === '' || step === undefined || parseFloat(step) === 'NaN') step = 1;
 
-                // Change the value
                 if ($(this).is('.plus')) {
                     if (max && (currentVal >= max)) {
                         $qty.val(max);
@@ -483,7 +480,7 @@ function get_products_by_category_slug($slug = '')
     foreach ($products as $product):
         $image_id = $product->get_image_id();
         ?>
-        <div class="col-lg-4 col-sm-6 col-12">
+        <div class="col-lg-4 col-sm-6 col-12 d-flex">
             <div class="product-card">
                 <div class="product-card__body">
                     <img class="product-card__img"
@@ -555,8 +552,6 @@ function woocommerce_content()
             <p class="catalog-info">Выберите технику и группу</p>
 
         <?php endif; ?>
-
-        <?php do_action('woocommerce_archive_description'); ?>
 
         <?php if (woocommerce_product_loop()) : ?>
 

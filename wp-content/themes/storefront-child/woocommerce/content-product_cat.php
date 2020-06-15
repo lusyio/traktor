@@ -22,8 +22,7 @@ $args = array(
     'taxonomy' => "product_cat",
 );
 
-global $wp_query;
-$activeCat = $wp_query->get_queried_object();
+$activeCat = get_queried_object();
 
 $categories = get_terms($args);
 

@@ -9,7 +9,7 @@ Author URI:   https://richbee.ru/
 
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;700;800;900&family=Montserrat:wght@500;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;700;800;900&family=Montserrat:wght@400;500;800&display=swap');
 
 html body {
     font-family: 'Alegreya', serif !important;
@@ -1575,7 +1575,25 @@ html .product-category .woocommerce-loop-category__title {
     margin-bottom: 4px;
 }
 
-.storefront-sorting{
+.category-filter-title {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+    margin-bottom: 0;
+}
+
+.category-filter-title strong{
+    font-weight: 500;
+}
+
+.category-filter-title:last-of-type {
+    margin-bottom: 40px;
+}
+
+.storefront-sorting {
     display: none;
 }
 

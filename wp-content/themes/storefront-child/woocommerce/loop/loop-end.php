@@ -19,19 +19,31 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-global $wp_query;
-$activeCat = $wp_query->get_queried_object();
+$activeCat = get_queried_object();
+$parentCatsId = get_ancestors($activeCat->term_id, 'product_cat');
+$parentCategory = get_term($parentCatsId[0], 'product_cat');
 ?>
 </div>
+
 <div class="row">
+    <?php if ($activeCat->parent === 0): ?>
+        <div class="col-12">
+            <p class="category-filter-title">Показаны <?= $activeCat->name ?> <strong><?= $activeCat->description ?></strong></p>
+        </div>
+    <?php else: ?>
+        <div class="col-12">
+            <p class="category-filter-title">Показаны <?= $parentCategory->name ?> <strong><?= $parentCategory->description ?></strong></p>
+            <?php if ($activeCat->parent !== 0): ?>
+                <p class="category-filter-title">в разделе <strong><?= $activeCat->name ?></strong></p>
+            <?php endif; ?>
+        </div>
+    <?php endif; ?>
     <div class="col-lg-3 col-12">
         <?php
-        $args = array(
-            'taxonomy' => "product_cat",
-        );
-        $product_categories = get_terms($args);
-        foreach ($product_categories as $product_category) {
-            echo woocommerce_subcats_from_parentcat_by_ID($product_category->term_id, $activeCat->term_id);
+        if ($activeCat->parent === 0) {
+            echo woocommerce_subcats_from_parentcat_by_ID($activeCat->term_id, $activeCat->term_id);
+        } else {
+            echo woocommerce_subcats_from_parentcat_by_ID($parentCatsId[0], $activeCat->term_id);
         }
         ?>
     </div>
