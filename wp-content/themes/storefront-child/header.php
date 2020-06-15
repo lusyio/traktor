@@ -42,7 +42,11 @@
                 <div>
                     <a href="#">Skype: tz-4k-14</a>
                     <a href="#">shop@minitraktorcz.ru</a>
-                    <a href="#">Войти в аккаунт</a>
+                    <?php if (is_user_logged_in()): ?>
+                        <a  title="<?php _e('My Account', 'woothemes'); ?>" href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>">Мой аккаунт</a>
+                    <?php else: ?>
+                        <a title="<?php _e('Login / Register', 'woothemes'); ?>" href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>">Войти в аккаунт</a>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -85,8 +89,9 @@
                             global $woocommerce; ?>
                             <a href="<?php echo $woocommerce->cart->get_cart_url() ?>"
                                class="basket-btn basket-btn_fixed-xs text-decoration-none position-relative">
-                        <span class="basket-btn__label"><img src="/wp-content/themes/storefront-child/svg/shopping-cart.svg"
-                                                             alt=""></span>
+                        <span class="basket-btn__label"><img
+                                    src="/wp-content/themes/storefront-child/svg/shopping-cart.svg"
+                                    alt=""></span>
                                 <?php if (sprintf($woocommerce->cart->cart_contents_count) != 0): ?>
                                     <span class="basket-btn__counter"><?php echo sprintf($woocommerce->cart->cart_contents_count); ?></span>
                                 <?php endif; ?>
