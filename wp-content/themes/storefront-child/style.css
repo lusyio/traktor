@@ -169,7 +169,7 @@ ul.menu li.current-menu-item > a:before {
     background-size: 100% 1px;
 }
 
-.subcategory-list li a{
+.subcategory-list li a {
     padding-bottom: 5px;
     text-decoration: none;
     background-image: linear-gradient(#000, #000);
@@ -524,6 +524,11 @@ html body .btn.btn-traktor-primary:hover, button:hover, input[type="button"]:hov
 
 .contacts-left {
     padding: 90px 0;
+}
+
+html .form-row {
+    margin-right: 0 !important;
+    margin-left: 0 !important;
 }
 
 .contacts {
@@ -1728,7 +1733,7 @@ html .product-category .woocommerce-loop-category__title {
     transition: 145ms ease-in-out;
 }
 
-.category-filter-reset:hover{
+.category-filter-reset:hover {
     color: #000;
 }
 

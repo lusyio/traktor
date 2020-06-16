@@ -65,4 +65,3 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
 
     </form>
 </div>
-<?php do_action('woocommerce_after_checkout_form', $checkout); ?>

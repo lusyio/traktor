@@ -687,7 +687,7 @@ function add_custom_checkout_field($checkout)
 {
     woocommerce_form_field('passport-series', array(
         'type' => 'text',
-        'class' => array('form-row-wide'),
+        'class' => array('form-row form-row-first'),
         'label' => 'Серия паспорта',
         'placeholder' => '',
         'required' => true,
@@ -695,7 +695,7 @@ function add_custom_checkout_field($checkout)
     ), $checkout->get_value('passport-series'));
     woocommerce_form_field('passport-number', array(
         'type' => 'text',
-        'class' => array('form-row-wide'),
+        'class' => array('form-row form-row-last'),
         'label' => 'Номер паспорта',
         'placeholder' => '',
         'required' => true,
