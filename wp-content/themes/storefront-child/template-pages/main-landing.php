@@ -20,8 +20,7 @@ Template Post Type: post, page, product
                         <p class="card-traktor__title">Быстрый заказ</p>
                         <p class="card-traktor__info">Если вы не хотите терять время на поиск необходимых запчастей,
                             оставьте свой номер телефона, и менеджер свяжется с вами, чтобы быстро оформить заявку</p>
-                        <input class="input-traktor-primary" placeholder="+ 7 (_ _ _)-_ _-_ _" type="text">
-                        <button class="btn btn-traktor-primary">Оформить заявку</button>
+                        <?= do_shortcode('[caldera_form id="CF5ee890fd2761f"]') ?>
                         <p class="card-traktor__oferta">Нажимая кнопку “Оформить заявку” вы даете согласие на обработку
                             своих персональных данных</p>
                     </div>

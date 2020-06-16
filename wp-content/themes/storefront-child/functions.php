@@ -346,7 +346,7 @@ function add_delivery_block($img = true, $cls = false)
                 <div class="card-delivery card-1">
                     <div class="card-delivery__body">
                         <p class="card-delivery__title">Бесплатная доставка до транспортных компаний</p>
-                        <a class="card-delivery__link" href="#">Способы доставки</a>
+                        <a class="card-delivery__link" href="'. get_page_link(8) .'">Способы доставки</a>
                     </div>
                 </div>
             </div>
@@ -354,7 +354,7 @@ function add_delivery_block($img = true, $cls = false)
                 <div class="card-delivery card-2">
                     <div class="card-delivery__body">
                         <p class="card-delivery__title">Возможна отправка наложенным платежом</p>
-                        <a class="card-delivery__link" href="#">Способы оплаты</a>
+                        <a class="card-delivery__link" href="'. get_page_link(10) .'">Способы оплаты</a>
                     </div>
                 </div>
             </div>
@@ -363,7 +363,7 @@ function add_delivery_block($img = true, $cls = false)
                     <div class="card-delivery__body">
                         <p class="card-delivery__title">Консультируем по любым вопросам</p>
                         <p class="card-delivery__info">Вы можете посмотреть ответы на самые распространенные вопросы</p>
-                        <a class="card-delivery__link" href="#">Ответы на частые вопросы по неисправностям</a>
+                        <a class="card-delivery__link" href="'. get_page_link(18) .'">Ответы на частые вопросы по неисправностям</a>
                     </div>
                 </div>
             </div>

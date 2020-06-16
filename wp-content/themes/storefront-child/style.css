@@ -278,16 +278,17 @@ body .main-after-header .main-after-header__info {
     margin-bottom: 20px;
 }
 
-html body .input-traktor-primary {
+html body input.input-traktor-primary, html body .single .input-traktor-primary input {
     border: 1px solid #D7D8DC;
     border-radius: 10px;
     padding: 17px 29px;
     width: 100%;
     margin-bottom: 15px;
     background: #fff;
+    height: 58px;
 }
 
-html body .input-traktor-primary::placeholder {
+html body .input-traktor-primary::placeholder, html body .single .input-traktor-primary input::placeholder {
     font-weight: normal;
     font-size: 18px;
     line-height: 21px;
@@ -387,7 +388,8 @@ html body .btn.btn-traktor-primary:hover, button:hover, input[type="button"]:hov
     color: #858585;
     margin-bottom: 25px;
 }
-.contacts .contacts__list{
+
+.contacts .contacts__list {
     display: flex;
     flex-direction: row;
     margin-bottom: 15px;
@@ -405,7 +407,7 @@ html body .btn.btn-traktor-primary:hover, button:hover, input[type="button"]:hov
     position: unset;
 }
 
-.contacts .contacts__list p{
+.contacts .contacts__list p {
     font-weight: normal;
     font-size: 17px;
     line-height: 17px;
@@ -413,15 +415,15 @@ html body .btn.btn-traktor-primary:hover, button:hover, input[type="button"]:hov
     margin-bottom: 0;
 }
 
-.contacts-left{
+.contacts-left {
     padding: 70px 0;
 }
 
-.contacts{
+.contacts {
     position: relative;
 }
 
-.contacts .contacts__list a{
+.contacts .contacts__list a {
     color: #598468;
     display: table;
 }
