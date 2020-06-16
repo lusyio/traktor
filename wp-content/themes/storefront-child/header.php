@@ -40,7 +40,7 @@
                 }
                 ?>
                 <div>
-                    <a href="skype:<?= get_field('contacts_skype', 16) ?>?chat"><?= get_field('contacts_skype', 16) ?></a>
+                    <a href="skype:<?= get_field('contacts_skype', 16) ?>?chat">skype: <?= get_field('contacts_skype', 16) ?></a>
                     <a href="mailto:<?= get_field('contacts_email', 16) ?>"><?= get_field('contacts_email', 16) ?></a>
                     <?php if (is_user_logged_in()): ?>
                         <a  title="<?php _e('My Account', 'woothemes'); ?>" href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>">Мой аккаунт</a>

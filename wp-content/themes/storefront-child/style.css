@@ -523,7 +523,7 @@ html body .btn.btn-traktor-primary:hover, button:hover, input[type="button"]:hov
 }
 
 .contacts-left {
-    padding: 70px 0;
+    padding: 90px 0;
 }
 
 .contacts {
@@ -1725,6 +1725,11 @@ html .product-category .woocommerce-loop-category__title {
     line-height: 22px;
     color: #A0A0A0;
     text-decoration: none;
+    transition: 145ms ease-in-out;
+}
+
+.category-filter-reset:hover{
+    color: #000;
 }
 
 .wc-proceed-to-checkout .button.checkout-button {
@@ -1737,10 +1742,6 @@ html .product-category .woocommerce-loop-category__title {
 
 html .woocommerce-cart-form .actions {
     background: #fff !important;
-}
-
-.category-filter-reset:hover {
-    color: #A0A0A0;
 }
 
 .category-filter-reset img {
@@ -2019,6 +2020,7 @@ html .cart .qty_button {
 html .cart .qty_button:hover {
     border: 1px solid #000000;
     color: #000000;
+    background: #fff !important;
 }
 
 html .cart .qty_button.plus {
