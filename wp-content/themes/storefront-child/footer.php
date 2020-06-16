@@ -35,7 +35,7 @@
             </div>
             <?php
             if ($menu_items = wp_get_nav_menu_items('second')) {
-                echo '<ul class="footer-menu" id="menu-second">';
+                echo '<ul class="footer-menu link-strike-container-footer" id="menu-second">';
                 $half_count = ceil(count($menu_items) / 2);
                 foreach ((array)$menu_items as $key => $menu_item) {
                     $title = $menu_item->title; // заголовок элемента меню (анкор ссылки)

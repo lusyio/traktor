@@ -59,7 +59,7 @@
                     'theme_location' => 'primary',
                     'container' => 'div',
                     'container_id' => '',
-                    'container_class' => 'collapse navbar-collapse justify-content-start header-menu',
+                    'container_class' => 'collapse link-strike-container navbar-collapse justify-content-start header-menu',
                     'menu_id' => false,
                     'menu_class' => 'navbar-nav',
                     'depth' => 3,
