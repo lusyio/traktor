@@ -58,5 +58,10 @@ $parentCategory = get_term($parentCatsId[0], 'product_cat');
         <div class="row">
             <?= get_products_by_category_slug($activeCat->slug) ?>
         </div>
+        <div class="row">
+            <div class="col-12">
+                <?= get_pagination_woo() ?>
+            </div>
+        </div>
     </div>
 </div>

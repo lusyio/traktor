@@ -288,6 +288,53 @@ html body input.input-traktor-primary, html body .single .input-traktor-primary 
     height: 58px;
 }
 
+html .woocommerce-pagination {
+    float: none;
+    text-align: left;
+    margin-top: 25px;
+    margin-bottom: 40px;
+}
+
+.pagination .page-numbers li, .woocommerce-pagination .page-numbers li:not(:last-of-type) {
+    margin-right: 25px;
+}
+
+.pagination .page-numbers li, .woocommerce-pagination .page-numbers li a {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #D7D8DC !important;
+    color: #D7D8DC;
+    padding: 9px !important;
+    background-color: #fff !important;
+    text-align: center;
+    transition: 145ms ease-in-out;
+}
+
+.pagination .page-numbers li, .woocommerce-pagination .page-numbers li a:hover{
+    border: 1px solid #000 !important;
+    color: #000000 !important;
+}
+
+.woocommerce-pagination .page-numbers li .page-numbers.current {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    width: 40px;
+    height: 40px;
+    padding: 9px !important;
+    border: 1px solid #000;
+    color: #000000;
+    text-align: center;
+    background-color: #fff;
+}
+
 html body .input-traktor-primary::placeholder, html body .single .input-traktor-primary input::placeholder {
     font-weight: normal;
     font-size: 18px;

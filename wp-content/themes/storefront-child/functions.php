@@ -249,7 +249,7 @@ add_filter('loop_shop_per_page', 'wg_view_all_products');
 
 function wg_view_all_products()
 {
-    return '5';
+    return '9';
 }
 
 //Удаление сортировки
@@ -346,7 +346,7 @@ function add_delivery_block($img = true, $cls = false)
                 <div class="card-delivery card-1">
                     <div class="card-delivery__body">
                         <p class="card-delivery__title">Бесплатная доставка до транспортных компаний</p>
-                        <a class="card-delivery__link" href="'. get_page_link(8) .'">Способы доставки</a>
+                        <a class="card-delivery__link" href="' . get_page_link(8) . '">Способы доставки</a>
                     </div>
                 </div>
             </div>
@@ -354,7 +354,7 @@ function add_delivery_block($img = true, $cls = false)
                 <div class="card-delivery card-2">
                     <div class="card-delivery__body">
                         <p class="card-delivery__title">Возможна отправка наложенным платежом</p>
-                        <a class="card-delivery__link" href="'. get_page_link(10) .'">Способы оплаты</a>
+                        <a class="card-delivery__link" href="' . get_page_link(10) . '">Способы оплаты</a>
                     </div>
                 </div>
             </div>
@@ -363,7 +363,7 @@ function add_delivery_block($img = true, $cls = false)
                     <div class="card-delivery__body">
                         <p class="card-delivery__title">Консультируем по любым вопросам</p>
                         <p class="card-delivery__info">Вы можете посмотреть ответы на самые распространенные вопросы</p>
-                        <a class="card-delivery__link" href="'. get_page_link(18) .'">Ответы на частые вопросы по неисправностям</a>
+                        <a class="card-delivery__link" href="' . get_page_link(18) . '">Ответы на частые вопросы по неисправностям</a>
                     </div>
                 </div>
             </div>
@@ -488,7 +488,7 @@ function get_products_by_category_slug($slug = '')
             <div class="product-card">
                 <div class="product-card__body">
                     <img class="product-card__img"
-                         src="<?= wp_get_attachment_image_url($image_id, 'full'); ?>"
+                         src="<?= wp_get_attachment_image_url($image_id, 'medium'); ?>"
                          alt="<?= $product->name; ?>">
                     <h4 class="product-card__name"><?= $product->name ?></h4>
                     <p>
@@ -500,7 +500,42 @@ function get_products_by_category_slug($slug = '')
             </div>
         </div>
     <?php
-    endforeach; ?>
+    endforeach;
+    return ob_get_clean();
+}
+
+function get_pagination_woo()
+{
+    $total = isset($total) ? $total : wc_get_loop_prop('total_pages');
+    $current = isset($current) ? $current : wc_get_loop_prop('current_page');
+    $base = isset($base) ? $base : esc_url_raw(str_replace(999999999, '%#%', remove_query_arg('add-to-cart', get_pagenum_link(999999999, false))));
+    $format = isset($format) ? $format : '';
+
+    if ($total <= 1) {
+        return;
+    }
+    ob_start(); ?>
+    <nav class="woocommerce-pagination">
+        <?php
+        echo paginate_links(
+            apply_filters(
+                'woocommerce_pagination_args',
+                array( // WPCS: XSS ok.
+                    'base' => $base,
+                    'format' => $format,
+                    'add_args' => false,
+                    'current' => max(1, $current),
+                    'total' => $total,
+                    'prev_text' => '&larr;',
+                    'next_text' => '&rarr;',
+                    'type' => 'list',
+                    'end_size' => 3,
+                    'mid_size' => 3,
+                )
+            )
+        );
+        ?>
+    </nav>
     <?php
     return ob_get_clean();
 }
