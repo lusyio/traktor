@@ -294,6 +294,16 @@ html body .input-traktor-primary::placeholder {
     color: #878787;
 }
 
+.woocommerce-Price-amount {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #000000;
+}
+
 html body .btn.btn-traktor-primary {
     background: #598468;
     border-radius: 10px;
@@ -310,11 +320,19 @@ html body .btn.btn-traktor-primary {
     transition: 145ms ease-in-out;
 }
 
+html #payment .place-order button {
+    max-width: 100%;
+}
+
+#payment .place-order {
+    padding: 0;
+}
+
 table.cart td.product-name a {
     color: #000;
 }
 
-table.cart td{
+table.cart td {
     vertical-align: baseline;
 }
 
@@ -327,7 +345,7 @@ html body .btn.btn-traktor-primary:hover, button:hover, input[type="button"]:hov
     color: #fff;
 }
 
-.storefront-full-width-content.woocommerce-cart .entry-header, .storefront-full-width-content.woocommerce-checkout .entry-header, .storefront-full-width-content.woocommerce-account .entry-header, .storefront-full-width-content .woocommerce-products-header{
+.storefront-full-width-content.woocommerce-cart .entry-header, .storefront-full-width-content.woocommerce-checkout .entry-header, .storefront-full-width-content.woocommerce-account .entry-header, .storefront-full-width-content .woocommerce-products-header {
     padding: 0;
     margin-bottom: 25px !important;
 }
@@ -340,6 +358,72 @@ html body .btn.btn-traktor-primary:hover, button:hover, input[type="button"]:hov
     text-align: center;
     color: #000000;
     margin-bottom: 0;
+}
+
+.contacts .contacts__map {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    right: 0;
+}
+
+.contacts .contacts__title {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 28px;
+    color: #000000;
+    margin-bottom: 25px;
+}
+
+.contacts .contacts__info {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    color: #858585;
+    margin-bottom: 25px;
+}
+.contacts .contacts__list{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.contacts .contacts__list img {
+    width: 22px;
+    height: 22px;
+    display: block;
+    margin-right: 25px;
+}
+
+.contacts .contacts__map-container {
+    position: unset;
+}
+
+.contacts .contacts__list p{
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 17px;
+    color: #000000;
+    margin-bottom: 0;
+}
+
+.contacts-left{
+    padding: 70px 0;
+}
+
+.contacts{
+    position: relative;
+}
+
+.contacts .contacts__list a{
+    color: #598468;
+    display: table;
 }
 
 .main-after-header__container {

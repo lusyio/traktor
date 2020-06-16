@@ -40,8 +40,8 @@
                 }
                 ?>
                 <div>
-                    <a href="#">Skype: tz-4k-14</a>
-                    <a href="#">shop@minitraktorcz.ru</a>
+                    <a href="skype:<?= get_field('contacts_skype', 16) ?>?chat"><?= get_field('contacts_skype', 16) ?></a>
+                    <a href="mailto:<?= get_field('contacts_email', 16) ?>"><?= get_field('contacts_email', 16) ?></a>
                     <?php if (is_user_logged_in()): ?>
                         <a  title="<?php _e('My Account', 'woothemes'); ?>" href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>">Мой аккаунт</a>
                     <?php else: ?>
@@ -79,8 +79,8 @@
                         <img src="/wp-content/themes/storefront-child/svg/whatsapp.svg" alt="">
                         <img src="/wp-content/themes/storefront-child/svg/viber.svg" alt="">
                         <p>
-                            <a href="tel:8 (926) 212-91-03">8 (926) 212-91-03</a>
-                            <a href="tel:8 (926) 212-91-03">8 (926) 212-91-03</a>
+                            <a href="tel:<?= get_field('contacts_phone_1', 16) ?>"><?= get_field('contacts_phone_1', 16) ?></a>
+                            <a href="tel:<?= get_field('contacts_phone_2', 16) ?>"><?= get_field('contacts_phone_2', 16) ?></a>
                         </p>
                     </div>
                     <?php if (class_exists('WooCommerce')): ?>

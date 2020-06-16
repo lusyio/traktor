@@ -593,3 +593,11 @@ function new_woocommerce_breadcrumbs()
         'home' => _x('Home', 'breadcrumb', 'woocommerce'),
     );
 }
+
+add_action('woocs_force_pay_bygeoip_rules', function ($country, $user_currency, $current_currency) {
+    global $WOOCS;
+    if (!empty($user_currency)) {
+        $WOOCS->set_currency($user_currency);
+    }
+}, 9999, 3);
+

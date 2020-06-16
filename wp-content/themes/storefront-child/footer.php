@@ -19,14 +19,18 @@
         <div class="footer-top">
             <div class="footer-contact">
                 <div>
-                    <a class="footer-contact__phone" href="tel:8 (916) 388-57-91">8 (916) 388-57-91</a>
+                    <a class="footer-contact__phone" href="tel:<?= get_field('contacts_phone_1', 16) ?>"><?= get_field('contacts_phone_1', 16) ?></a>
                     <p class="footer-contact__title">WhatsApp и Viber</p>
                     <p class="footer-contact__info">Только для письма и обмена фотографиями</p>
                 </div>
                 <div>
-                    <a class="footer-contact__phone" href="tel:8 (926) 212-91-03">8 (926) 212-91-03</a>
-                    <p class="footer-contact__title">shop@minitraktorcz.ru</p>
-                    <p class="footer-contact__info">Понедельник - Пятница с 9:00 до 18:00</p>
+                    <a class="footer-contact__phone" href="tel:<?= get_field('contacts_phone_2', 16) ?>"><?= get_field('contacts_phone_2', 16) ?></a>
+                    <p class="footer-contact__title">
+                        <a href="mailto:<?= get_field('contacts_email', 16) ?>">
+                            <?= get_field('contacts_email', 16) ?>
+                        </a>
+                    </p>
+                    <p class="footer-contact__info"><?= get_field('contacts_worktime', 16) ?></p>
                 </div>
             </div>
             <?php
