@@ -43,9 +43,13 @@
                     <a href="skype:<?= get_field('contacts_skype', 16) ?>?chat">skype: <?= get_field('contacts_skype', 16) ?></a>
                     <a href="mailto:<?= get_field('contacts_email', 16) ?>"><?= get_field('contacts_email', 16) ?></a>
                     <?php if (is_user_logged_in()): ?>
-                        <a  title="<?php _e('My Account', 'woothemes'); ?>" href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>">Мой аккаунт</a>
+                        <a title="<?php _e('My Account', 'woothemes'); ?>"
+                           href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>">Мой
+                            аккаунт</a>
                     <?php else: ?>
-                        <a title="<?php _e('Login / Register', 'woothemes'); ?>" href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>">Войти в аккаунт</a>
+                        <a title="<?php _e('Login / Register', 'woothemes'); ?>"
+                           href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>">Войти в
+                            аккаунт</a>
                     <?php endif; ?>
                 </div>
             </div>
@@ -83,6 +87,17 @@
                             <a href="tel:<?= get_field('contacts_phone_2', 16) ?>"><?= get_field('contacts_phone_2', 16) ?></a>
                         </p>
                     </div>
+                    <?php if (is_user_logged_in()): ?>
+                        <a class="login-header" title="<?php _e('My Account', 'woothemes'); ?>"
+                           href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>">
+                            <img src="/wp-content/themes/storefront-child/svg/login.svg" alt="login">
+                        </a>
+                    <?php else: ?>
+                        <a class="login-header" title="<?php _e('Login / Register', 'woothemes'); ?>"
+                           href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>">
+                            <img src="/wp-content/themes/storefront-child/svg/login.svg" alt="login">
+                        </a>
+                    <?php endif; ?>
                     <?php if (class_exists('WooCommerce')): ?>
                         <div class="s-header__basket-wr woocommerce mr-1 mr-sm-4 mt-auto mb-auto z-5 position-relative">
                             <?php
@@ -111,7 +126,7 @@
                             <div class="border-header">
                                 <?php
                                 wp_nav_menu(array(
-                                    'theme_location' => 'primary',
+                                    'menu' => 'outer',
                                     'container' => 'div',
                                     'container_id' => 'main-nav',
                                     'container_class' => 'collapse navbar-collapse justify-content-end',

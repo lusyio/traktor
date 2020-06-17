@@ -46,7 +46,7 @@ Template Post Type: post, page, product
 <div>
     <div class="container youtube-block">
         <div class="row">
-            <div class="col-lg-7 col-12">
+            <div class="col-lg-7 col-12 order-lg-1 order-2">
                 <div class="thumbnail_container position-relative text-center">
                     <div id="player">
                         <div id="ytplayer"></div>
@@ -82,7 +82,7 @@ Template Post Type: post, page, product
 
                 </script>
             </div>
-            <div class="col-lg-5 col-12">
+            <div class="col-lg-5 col-12 order-lg-2 order-1">
                 <p class="youtube-block__title">Посмотрите наш канал на Youtube</p>
                 <p class="youtube-block__info">Там вы сможете найти ответы на распространенные проблемы и поломки,
                     связанные с тракторами ТZ-4К-14, MF-70, Terra Vari</p>

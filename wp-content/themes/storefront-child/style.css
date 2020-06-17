@@ -13,6 +13,7 @@ Author URI:   https://richbee.ru/
 
 html body {
     font-family: 'Alegreya', serif !important;
+    overflow-x: hidden;
 }
 
 html header {
@@ -145,7 +146,7 @@ ul.menu li.current-menu-item > a:before {
     color: #FFFFFF;
 }
 
-.top-header-body div a:last-of-type{
+.top-header-body div a:last-of-type {
     margin-right: 0;
 }
 
@@ -652,7 +653,7 @@ html .card-parts .card-parts__title small {
     margin-left: 25px;
 }
 
-.product-container .woocommerce-Price-amount{
+.product-container .woocommerce-Price-amount {
     font-weight: bold;
     font-size: 32px;
     line-height: 39px;
@@ -2199,6 +2200,11 @@ table:not( .has-background ) tbody td {
 
 }
 
+.login-header {
+    align-self: flex-end;
+    margin-right: 15px;
+}
+
 .woocommerce-Message .btn-primary:hover, .woocommerce-message .button:hover, .woocommerce-info .button:hover, .woocommerce-error .button:hover, .woocommerce-noreviews .button:hover, p.no-comments .button:hover {
     color: #212121 !important;
 }
@@ -2243,18 +2249,19 @@ and (max-width: 1199px) {
         margin-right: 10px
     }
 
-    .thumbnail-block{
+    .thumbnail-block {
         width: 100%;
     }
+
     .category-card#minitractor {
         background-size: 115px 70px;
     }
 
-    html .product-container .cart .single_add_to_cart_button{
+    html .product-container .cart .single_add_to_cart_button {
         margin-top: 25px;
     }
 
-    table tbody .product-quantity{
+    table tbody .product-quantity {
         padding: 0;
     }
 
@@ -2263,7 +2270,155 @@ and (max-width: 1199px) {
 
 @media screen
 and (max-width: 991px) {
+    .main-parts .main-parts__img {
+        display: none;
+    }
 
+    .card-parts {
+        margin-bottom: 25px;
+    }
+
+    .main-delivery .main-delivery__img {
+        display: none;
+    }
+
+    .card-parts .card-parts__body {
+        height: 100%;
+    }
+
+    .card-parts {
+        height: 200px;
+    }
+
+    .card-parts img {
+        min-width: min-content;
+    }
+
+    .main-after-header__title, body .main-after-header .main-after-header__info, .main-parts .main-parts__title {
+        margin-left: 0;
+    }
+
+    .main-parts .main-parts__title, .main-delivery .main-delivery__title {
+        margin-bottom: 40px;
+    }
+
+    .main-delivery .main-delivery__title {
+        margin-right: 0;
+    }
+
+    .card-delivery {
+        margin-bottom: 25px;
+    }
+
+    .card-delivery.card-3 {
+        margin-top: 0;
+    }
+
+    .card-delivery.card-1 {
+        margin-top: 0;
+    }
+
+    .card-delivery.card-1, .card-delivery.card-2, .card-delivery.card-3, .card-delivery.card-4 {
+        height: 250px;
+    }
+
+    .card-delivery.card-3, .card-delivery.card-1 {
+        background-size: 29% 95%;
+    }
+
+    .card-delivery.card-1 .card-delivery__body {
+        padding: 58px 50px;
+    }
+
+    .youtube-block .youtube-block__title, .youtube-block .youtube-block__info {
+        max-width: 100%;
+    }
+
+    .youtube-block .youtube-block__link {
+        display: table;
+        margin-bottom: 45px;
+    }
+
+    .youtube-block {
+        margin-bottom: 100px;
+    }
+
+    .main-delivery {
+        margin-bottom: 40px
+    }
+
+    .footer-top {
+        flex-wrap: wrap;
+    }
+
+    .footer-contact {
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 25px;
+    }
+
+    .footer-menu li:first-of-type a {
+        margin-left: 0;
+    }
+
+    .top-header {
+        display: none;
+    }
+
+    .navbar-brand > div {
+        position: relative;
+        top: 0;
+        padding: 0;
+        max-width: 70px;
+    }
+
+    .outer-menu {
+        margin: 0;
+    }
+
+    .outer-menu .menu li > a {
+        font-weight: normal;
+        font-size: 16px;
+        padding: 0 !important;
+        line-height: 19px;
+        color: #000000 !important;
+        margin: 0 15px;
+    }
+
+    .outer-menu .menu li {
+        margin: 0 0 15px;
+    }
+
+    .outer-menu .menu li {
+        font-size: unset;
+    }
+
+    html .flex-viewport {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .flex-control-thumbs {
+        justify-content: center;
+    }
+
+    .woocommerce-product-gallery {
+        margin-bottom: 25px;
+    }
+
+    html .product-container .cart .single_add_to_cart_button {
+        margin-top: 0;
+    }
+
+    .contacts .contacts__map{
+        position: relative;
+        height: 350px;
+        width: 100%;
+    }
+
+    .contacts-left{
+        padding-bottom: 30px;
+    }
 
 }
 
