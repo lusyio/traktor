@@ -1904,6 +1904,10 @@ html .woocommerce-cart-form .actions {
     line-height: 22px;
 }
 
+.login-header{
+    display: none;
+}
+
 .catalog-title {
     font-family: 'Roboto', sans-serif;
     font-style: normal;
@@ -2000,6 +2004,10 @@ html .product-container .cart .price {
     align-self: center;
     margin-right: 45px;
     margin-bottom: 0;
+}
+
+.overflow-hidden{
+    overflow: hidden;
 }
 
 html .cart input.qty {
@@ -2272,6 +2280,10 @@ and (max-width: 1199px) {
 and (max-width: 991px) {
     .main-parts .main-parts__img {
         display: none;
+    }
+
+    .login-header{
+        display: block;
     }
 
     .card-parts {

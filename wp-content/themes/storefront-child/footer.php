@@ -19,12 +19,14 @@
         <div class="footer-top">
             <div class="footer-contact">
                 <div>
-                    <a class="footer-contact__phone" href="tel:<?= get_field('contacts_phone_1', 16) ?>"><?= get_field('contacts_phone_1', 16) ?></a>
+                    <a class="footer-contact__phone"
+                       href="tel:<?= get_field('contacts_phone_1', 16) ?>"><?= get_field('contacts_phone_1', 16) ?></a>
                     <p class="footer-contact__title">WhatsApp и Viber</p>
                     <p class="footer-contact__info">Только для письма и обмена фотографиями</p>
                 </div>
                 <div>
-                    <a class="footer-contact__phone" href="tel:<?= get_field('contacts_phone_2', 16) ?>"><?= get_field('contacts_phone_2', 16) ?></a>
+                    <a class="footer-contact__phone"
+                       href="tel:<?= get_field('contacts_phone_2', 16) ?>"><?= get_field('contacts_phone_2', 16) ?></a>
                     <p class="footer-contact__title">
                         <a href="mailto:<?= get_field('contacts_email', 16) ?>">
                             <?= get_field('contacts_email', 16) ?>
@@ -87,6 +89,18 @@
 
     </div><!-- .col-full -->
 </footer><!-- #colophon -->
+
+<script>
+    jQuery(function ($) {
+        $('.checkbox-toggle').on('change', function () {
+            if ($('.checkbox-toggle').is(':checked')) {
+                $('body').addClass('overflow-hidden');
+            } else {
+                $('body').removeClass('overflow-hidden');
+            }
+        });
+    })
+</script>
 
 <?php do_action('storefront_after_footer'); ?>
 
