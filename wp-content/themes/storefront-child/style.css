@@ -3,7 +3,7 @@ Theme Name:   	Richbee
 Author:       	Richbee
 Template:     	storefront
 Description:  	Дочерняя тема для storefront
-Version:      	1.0.0
+Version:      	1.0.1
 Theme URI:    https://richbee.ru/
 Author URI:   https://richbee.ru/
 
@@ -1424,11 +1424,11 @@ html .after-footer .after-footer__copyright {
     margin-bottom: 0;
 }
 
-.after-footer .after-footer__richbee img{
+.after-footer .after-footer__richbee img {
     transition: 145ms ease-in-out;
 }
 
-.after-footer .after-footer__richbee:hover img{
+.after-footer .after-footer__richbee:hover img {
     transform: scale(1.03);
 }
 
@@ -1772,6 +1772,7 @@ html .product-category .woocommerce-loop-category__title {
 
 .wc-proceed-to-checkout .button.checkout-button {
     max-width: 100%;
+    font-size: 16px;
 }
 
 .woocommerce-cart-form .actions input, .woocommerce-cart-form .actions button {
@@ -2327,6 +2328,18 @@ and (max-width: 991px) {
         margin-bottom: 40px;
     }
 
+    table.cart th, table.cart td {
+        padding: 0.618em;
+    }
+
+    table.cart .product-quantity .plus, table.cart .product-quantity .minus {
+        display: none;
+    }
+
+    table .quantity {
+        text-align: center;
+    }
+
     .main-delivery .main-delivery__title {
         margin-right: 0;
     }
@@ -2513,6 +2526,10 @@ and (max-width: 768px) {
 @media screen
 and (max-width: 576px) {
 
+    .card-parts img {
+        min-width: 100px;
+    }
+
     .woocommerce-shipping-methods .pure-material-radio > span::after {
         top: 3px;
     }
@@ -2523,6 +2540,93 @@ and (max-width: 576px) {
 
     .outer-menu .menu li {
         margin-left: 0;
+    }
+
+    html .card-delivery {
+        background: #fff !important;
+    }
+
+    html .card-delivery .card-delivery__body {
+        padding: 25px 30px !important;
+    }
+
+    .card-delivery.card-1, .card-delivery.card-2, .card-delivery.card-3, .card-delivery.card-4 {
+        height: auto;
+    }
+
+    .footer-contact {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer-contact > div:first-of-type {
+        margin-bottom: 15px;
+    }
+
+    .footer-contact > div {
+        width: 100%;
+    }
+
+    .footer-menu li a {
+        margin-left: 0;
+        margin-right: 15px;
+    }
+
+    .footer-menu li {
+        width: 50%;
+    }
+
+    .after-footer .after-footer__menu li a {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+
+    .woocommerce-product-gallery__image img {
+        padding: 0 20px;
+    }
+
+    .product-container .cart .quantity {
+        justify-content: flex-start;
+    }
+
+    html .product-container .cart .price{
+        margin-bottom: 25px;
+    }
+
+    .product-container .cart .price, .product-container .cart .quantity {
+        width: 100%;
+    }
+
+    .woocommerce-product-gallery__image {
+        padding: 20px 0;
+    }
+
+    html .flex-viewport {
+        max-width: 100%;
+    }
+
+    .flex-control-nav {
+        display: none;
+    }
+
+    .after-footer .after-footer__menu li {
+        width: 50%;
+    }
+
+    .after-footer .after-footer__menu {
+        flex-wrap: wrap;
+    }
+
+    .card-delivery.card-2 .card-delivery__link, .card-delivery.card-3 .card-delivery__link, .card-delivery.card-4 .card-delivery__link {
+        position: unset;
+    }
+
+    .card-delivery .card-delivery__info {
+        margin-bottom: 20px;
+    }
+
+    .footer-menu {
+        flex-wrap: wrap;
     }
 
     .header-phones {
@@ -2538,4 +2642,49 @@ and (max-width: 576px) {
         margin-right: 15px;
     }
 
+}
+
+/*--------------------------------------------------------------
+## Notebook
+--------------------------------------------------------------*/
+@media only screen and (max-width: 1280px) {
+    html {
+        font-size: 92%;
+    }
+}
+
+/*--------------------------------------------------------------
+## Netbook
+--------------------------------------------------------------*/
+@media only screen and (max-width: 1024px) {
+    html {
+        font-size: 90%;
+    }
+}
+
+/*--------------------------------------------------------------
+## iPad
+--------------------------------------------------------------*/
+@media only screen and (max-width: 991px) {
+    html {
+        font-size: 85%;
+    }
+}
+
+/*--------------------------------------------------------------
+## iPad
+--------------------------------------------------------------*/
+@media only screen and (max-width: 768px) {
+    html {
+        font-size: 80%;
+    }
+}
+
+/*--------------------------------------------------------------
+## iPad
+--------------------------------------------------------------*/
+@media only screen and (max-width: 480px) {
+    html {
+        font-size: 75%;
+    }
 }
