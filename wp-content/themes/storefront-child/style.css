@@ -16,6 +16,13 @@ html body {
     overflow-x: hidden;
 }
 
+p{
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 130%;
+    color: #000000;
+}
+
 html header {
     font-family: 'Roboto', sans-serif;
 }
