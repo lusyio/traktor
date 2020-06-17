@@ -253,6 +253,11 @@ header .header-menu ul li:first-of-type a {
     display: table;
     color: #000000;
     margin-bottom: 6px;
+    transition: 145ms ease-in-out;
+}
+
+.header-phones a:hover {
+    color: #598468;
 }
 
 .header-phones p {
@@ -1419,6 +1424,14 @@ html .after-footer .after-footer__copyright {
     margin-bottom: 0;
 }
 
+.after-footer .after-footer__richbee img{
+    transition: 145ms ease-in-out;
+}
+
+.after-footer .after-footer__richbee:hover img{
+    transform: scale(1.03);
+}
+
 .site-info {
     padding: 0;
 }
@@ -1904,7 +1917,7 @@ html .woocommerce-cart-form .actions {
     line-height: 22px;
 }
 
-.login-header{
+.login-header {
     display: none;
 }
 
@@ -2006,7 +2019,7 @@ html .product-container .cart .price {
     margin-bottom: 0;
 }
 
-.overflow-hidden{
+.overflow-hidden {
     overflow: hidden;
 }
 
@@ -2282,7 +2295,7 @@ and (max-width: 991px) {
         display: none;
     }
 
-    .login-header{
+    .login-header {
         display: block;
     }
 
