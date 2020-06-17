@@ -145,6 +145,10 @@ ul.menu li.current-menu-item > a:before {
     color: #FFFFFF;
 }
 
+.top-header-body div a:last-of-type{
+    margin-right: 0;
+}
+
 .link-strike-container .nav-link {
     padding-bottom: 5px;
     text-decoration: none;
@@ -648,6 +652,16 @@ html .card-parts .card-parts__title small {
     margin-left: 25px;
 }
 
+.product-container .woocommerce-Price-amount{
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+
+
+    color: #000000;
+}
+
 h1.entry-title.product_title {
     font-weight: normal;
     font-size: 36px;
@@ -1100,6 +1114,10 @@ header#masthead {
     margin: auto;
 }
 
+.outer-menu {
+    margin-right: 0;
+}
+
 .navbar-dark .navbar-brand {
     position: relative;
     z-index: 5;
@@ -1166,7 +1184,7 @@ header#masthead {
     width: 200vw;
     height: 200vw;
     color: #FEFEFE;
-    background: #1C1C1C;
+    background: #fff;
     border-radius: 50%;
     -webkit-transition: all 0.4s ease;
     -moz-transition: all 0.4s ease;
@@ -1599,6 +1617,7 @@ button.alt, input[type="button"].alt, input[type="reset"].alt, input[type="submi
     display: flex;
     flex-direction: row;
     margin-top: 50px;
+    flex-wrap: wrap;
 }
 
 .flex-control-thumbs {
@@ -1995,6 +2014,7 @@ html .cart input.qty {
     margin-bottom: 0;
     text-align: center;
     margin-right: 15px;
+    min-width: 40px;
 }
 
 html .product-container .cart .single_add_to_cart_button {
@@ -2020,6 +2040,7 @@ html .cart .qty_button {
     padding: 9px;
     align-self: center;
     margin-bottom: 0;
+    min-width: 40px;
 }
 
 html .cart .qty_button:hover {
@@ -2217,6 +2238,26 @@ and (max-width: 1199px) {
     .outer-menu .menu ul {
         text-align: left;
     }
+
+    .footer-contact > div:first-of-type {
+        margin-right: 10px
+    }
+
+    .thumbnail-block{
+        width: 100%;
+    }
+    .category-card#minitractor {
+        background-size: 115px 70px;
+    }
+
+    html .product-container .cart .single_add_to_cart_button{
+        margin-top: 25px;
+    }
+
+    table tbody .product-quantity{
+        padding: 0;
+    }
+
 
 }
 

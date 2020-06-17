@@ -317,7 +317,7 @@ function add_delivery_block($img = true, $cls = false)
     $img
         ? $imgHtml = '<img class="main-delivery__img" src="/wp-content/themes/storefront-child/images/main-delivery.png" alt="">
                 <div class="row">
-                <div class="col-lg-4 col-12 offset-lg-8 offset-0">
+                <div class="col-xl-4 col-lg-5 col-12 offset-xl-8 offset-lg-7 offset-0">
                     <h3 class="main-delivery__title">Обеспечиваем комфортные условия работы</h3>
                 </div>
                  </div>'
@@ -326,7 +326,7 @@ function add_delivery_block($img = true, $cls = false)
         '<div class="container main-delivery ' . $cls . '">
         ' . $imgHtml . '
         <div class="row">
-            <div class="col-lg-5 offset-lg-1 col-12 offset-0">
+            <div class="col-xl-5 col-lg-6 offset-xl-1 offset-lg-0 col-12 offset-0">
                 <div class="card-delivery card-1">
                     <div class="card-delivery__body">
                         <p class="card-delivery__title">Бесплатная доставка до транспортных компаний</p>
@@ -334,7 +334,7 @@ function add_delivery_block($img = true, $cls = false)
                     </div>
                 </div>
             </div>
-            <div class="col-lg-5 col-12">
+            <div class="col-xl-5 col-lg-6 col-12">
                 <div class="card-delivery card-2">
                     <div class="card-delivery__body">
                         <p class="card-delivery__title">Возможна отправка наложенным платежом</p>

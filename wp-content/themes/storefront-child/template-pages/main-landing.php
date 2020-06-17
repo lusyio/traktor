@@ -12,7 +12,7 @@ Template Post Type: post, page, product
 <div class="main-after-header">
     <div class="container main-after-header__container">
         <div class="row">
-            <div class="col-lg-5 col-12">
+            <div class="col-xl-5 col-lg-6 col-12">
                 <h1 class="main-after-header__title">Продажа запчастей</h1>
                 <p class="main-after-header__info">ДЛЯ ЧЕШСКОЙ ТЕХНИКИ ТZ-4К-14 (МТ8-132), MF-70, TERRA VARI</p>
                 <div class="card-traktor">
