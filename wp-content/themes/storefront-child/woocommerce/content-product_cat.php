@@ -38,7 +38,7 @@ foreach ($categories as $category):
         $thumbnail_id = get_term_meta($category->term_id, 'thumbnail_id', true);
         $image = wp_get_attachment_url($thumbnail_id);
         ?>
-        <div class="col-lg-4 col-sm-6 col-12 d-flex">
+        <div class="col-lg-4 col-md-6 col-12 d-flex">
             <a class="d-flex w-100" href="<?= get_term_link($category->term_id, 'product_cat') ?>">
                 <div id="<?= $category->slug ?>" class="category-card d-flex w-100 <?= $active ?>"
                      style='background-image: url("<?= $image ?>")'>
