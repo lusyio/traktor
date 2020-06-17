@@ -87,6 +87,10 @@ header .woocommerce {
     padding-left: 15px;
 }
 
+.hentry .entry-header{
+    padding-top: 25px !important;
+}
+
 h1.entry-title {
     text-align: center;
 }

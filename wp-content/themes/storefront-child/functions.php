@@ -617,7 +617,7 @@ function woocommerce_content()
 add_filter('woocommerce_breadcrumb_defaults', 'new_woocommerce_breadcrumbs', 20);
 function new_woocommerce_breadcrumbs()
 {
-    if (is_page(16)) {
+    if (is_page(16) || is_checkout()) {
         return array(
             'delimiter' => ' - ',
             'wrap_before' => '<div class="new-storefront-breadcrumb d-none"><div class="container"><div class="row"><div class="col-12"><nav class="woocommerce-breadcrumb">',
