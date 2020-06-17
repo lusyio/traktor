@@ -679,6 +679,22 @@ function custom_override_checkout_fields($fields)
 
 add_action('woocommerce_before_order_notes', 'add_custom_checkout_field');
 
+add_filter( 'woocommerce_checkout_fields' , 'override_billing_checkout_fields', 20, 1 );
+/**
+ * Override fields from checkout
+ * @param $fields
+ * @return mixed
+ */
+function override_billing_checkout_fields( $fields ) {
+    $fields['billing']['billing_phone']['placeholder'] = 'Номер телефона';
+    $fields['billing']['billing_email']['placeholder'] = 'Email';
+    $fields['billing']['billing_postcode']['placeholder'] = 'Индекс';
+    $fields['billing']['billing_last_name']['placeholder'] = 'Фамилия';
+    $fields['billing']['billing_first_name']['placeholder'] = 'Имя';
+    $fields['billing']['billing_address_1']['placeholder'] = 'Город, улица, номер дома и квартиры';
+    return $fields;
+}
+
 /**
  * Add new fields to checkout
  * @param $checkout
@@ -689,7 +705,7 @@ function add_custom_checkout_field($checkout)
         'type' => 'text',
         'class' => array('form-row form-row-first'),
         'label' => 'Серия паспорта',
-        'placeholder' => '',
+        'placeholder' => 'Серия паспорта',
         'required' => true,
         'default' => '',
     ), $checkout->get_value('passport-series'));
@@ -697,7 +713,7 @@ function add_custom_checkout_field($checkout)
         'type' => 'text',
         'class' => array('form-row form-row-last'),
         'label' => 'Номер паспорта',
-        'placeholder' => '',
+        'placeholder' => 'Номер паспорта',
         'required' => true,
         'default' => '',
     ), $checkout->get_value('passport-number'));
@@ -705,7 +721,7 @@ function add_custom_checkout_field($checkout)
         'type' => 'text',
         'class' => array('form-row-wide'),
         'label' => 'Когда выдан',
-        'placeholder' => '',
+        'placeholder' => 'Дата выдачи',
         'required' => true,
         'default' => '',
     ), $checkout->get_value('passport-date'));
@@ -713,7 +729,7 @@ function add_custom_checkout_field($checkout)
         'type' => 'text',
         'class' => array('form-row-wide'),
         'label' => 'Кем выдан',
-        'placeholder' => '',
+        'placeholder' => 'Кем выдан',
         'required' => true,
         'default' => '',
     ), $checkout->get_value('passport-place'));
