@@ -11,6 +11,7 @@ Template Post Type: post, page, product
     <header class="entry-header">
         <h1 class="entry-title"><?= the_title(); ?></h1>
     </header>
+    <?php the_content(); ?>
     <div class="row">
         <div class="col-lg-4 col-12">
             <div class="card-delivery">
