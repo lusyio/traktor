@@ -36,8 +36,8 @@ if ($product->is_in_stock()) : ?>
     <?php if (get_field('product_weight') !== '') : ?>
         <p class="product-info">Вес: <?= get_field('product_weight') ?></p>
     <?php endif; ?>
-    <?php if (get_field('catalog_number') !== '') : ?>
-        <p class="product-info">Номер в каталоге: №<?= get_field('catalog_number') ?></p>
+    <?php if ($product->sku !== '') : ?>
+        <p class="product-info">Номер в каталоге: №<?= $product->sku ?></p>
     <?php endif; ?>
     <form class="cart"
           action="<?php echo esc_url(apply_filters('woocommerce_add_to_cart_form_action', $product->get_permalink())); ?>"
