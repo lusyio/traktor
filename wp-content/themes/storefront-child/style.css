@@ -1709,6 +1709,15 @@ html .flex-viewport {
     margin-bottom: 10px;
 }
 
+.product-out-stock{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: #ca4c4c;
+    margin-bottom: 10px;
+}
+
 .woocommerce-product-gallery__wrapper {
     margin-bottom: 25px;
     background: #FFFFFF;

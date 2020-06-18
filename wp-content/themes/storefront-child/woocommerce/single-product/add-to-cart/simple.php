@@ -28,7 +28,11 @@ echo wc_get_stock_html($product); // WPCS: XSS ok.
 if ($product->is_in_stock()) : ?>
 
     <?php do_action('woocommerce_before_add_to_cart_form'); ?>
-    <p class="product-in-stock">В наличии</p>
+    <?php if ($product->manage_stock): ?>
+        <p class="product-in-stock">В наличии: <?= $product->stock_quantity; ?></p>
+    <?php else: ?>
+        <p class="product-in-stock">В наличии</p>
+    <?php endif; ?>
     <?php if (get_field('product_weight') !== '') : ?>
         <p class="product-info">Вес: <?= get_field('product_weight') ?></p>
     <?php endif; ?>
@@ -63,4 +67,6 @@ if ($product->is_in_stock()) : ?>
 
     <?php do_action('woocommerce_after_add_to_cart_form'); ?>
 
+<?php else: ?>
+    <p class="product-out-stock">Нет в наличии</p>
 <?php endif; ?>

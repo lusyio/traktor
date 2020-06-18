@@ -799,3 +799,5 @@ function show_new_checkout_field_emails($order, $sent_to_admin, $plain_text, $em
     if (get_post_meta($order_id, '_passport-place', true)) echo '<p><strong>Кем выдан паспорт:</strong> ' . get_post_meta($order_id, '_passport-place', true) . '</p>';
 }
 
+add_filter( 'woocommerce_get_stock_html', '__return_empty_string' );
+
