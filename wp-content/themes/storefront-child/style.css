@@ -16,7 +16,7 @@ html body {
     overflow-x: hidden;
 }
 
-p{
+p {
     font-weight: normal;
     font-size: 18px;
     line-height: 130%;
@@ -87,7 +87,30 @@ header .woocommerce {
     padding-left: 15px;
 }
 
-.hentry .entry-header{
+.delivery .card-delivery .card-delivery__body {
+    padding: 25px;
+}
+
+.delivery .card-delivery .card-delivery__title, .delivery .card-delivery .card-delivery__info {
+    max-width: 100%;
+}
+
+.delivery .card-delivery .card-delivery__header {
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    height: 250px;
+    border-bottom: 5px solid #598468;
+}
+
+.delivery h1.entry-title{
+    margin-bottom: 45px !important;
+}
+
+.delivery{
+    padding-bottom: 50px;
+}
+
+.hentry .entry-header {
     padding-top: 25px !important;
 }
 
@@ -2600,7 +2623,7 @@ and (max-width: 576px) {
         justify-content: flex-start;
     }
 
-    html .product-container .cart .price{
+    html .product-container .cart .price {
         margin-bottom: 25px;
     }
 
