@@ -102,11 +102,11 @@ header .woocommerce {
     border-bottom: 5px solid #598468;
 }
 
-.delivery h1.entry-title{
+.delivery h1.entry-title {
     margin-bottom: 45px !important;
 }
 
-.delivery{
+.delivery {
     padding-bottom: 50px;
 }
 
@@ -524,8 +524,8 @@ html body .btn.btn-traktor-primary:hover, button:hover, input[type="button"]:hov
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 30px;
-    line-height: 28px;
+    font-size: 1.875rem;
+    line-height: 1.875rem;
     color: #000000;
     margin-bottom: 25px;
 }
@@ -595,8 +595,8 @@ html .form-row {
 
 .main-parts .main-parts__title {
     font-weight: bold;
-    font-size: 36px;
-    line-height: 36px;
+    font-size: 2.25rem;
+    line-height: 2.25rem;
     color: #000000;
     margin-left: 45px;
     margin-bottom: 62px;
@@ -643,7 +643,7 @@ html .card-parts .card-parts__title {
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 800;
-    font-size: 28px;
+    font-size: 1.75rem;
     line-height: 24px;
     color: #000000;
 }
@@ -694,7 +694,7 @@ html .card-parts .card-parts__title small {
 
 .product-container .woocommerce-Price-amount {
     font-weight: bold;
-    font-size: 32px;
+    font-size: 2rem;
     line-height: 39px;
     /* identical to box height */
 
@@ -704,8 +704,8 @@ html .card-parts .card-parts__title small {
 
 h1.entry-title.product_title {
     font-weight: normal;
-    font-size: 36px;
-    line-height: 49px;
+    font-size: 2.25rem;
+    line-height: 3.0625rem;
     text-align: left;
     color: #000000;
     margin-bottom: 5px;
@@ -713,8 +713,8 @@ h1.entry-title.product_title {
 
 .main-delivery .main-delivery__title {
     font-weight: bold;
-    font-size: 36px;
-    line-height: 42px;
+    font-size: 2.25rem;
+    line-height: 2.625rem;
     text-align: right;
     color: #000000;
     margin-bottom: 83px;
@@ -1052,6 +1052,11 @@ h1.entry-title.product_title {
 
 .navbar-dark .navbar-toggler {
     border: 0;
+}
+
+.navbar-toggler{
+    border: 0 !important;
+    transform: scale(1.5);
 }
 
 .site-title {
@@ -1938,7 +1943,7 @@ html .woocommerce-cart-form .actions {
     font-style: normal;
     font-weight: 800;
     transition: 145ms ease-in-out;
-    font-size: 28px;
+    font-size: 1.75rem;
     line-height: 24px;
 
     color: #000000;
@@ -1954,6 +1959,8 @@ html .woocommerce-cart-form .actions {
 
 .login-header {
     display: none;
+    z-index: 5;
+    position: relative;
 }
 
 .catalog-title {
@@ -2046,7 +2053,7 @@ html .product-container .cart .price {
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: bold;
-    font-size: 32px;
+    font-size: 2rem;
     line-height: 39px;
     color: #000000;
     align-self: center;
@@ -2127,6 +2134,10 @@ html .cart input.qty::-webkit-outer-spin-button,
 html .cart input.qty::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+#billing_country_field{
+    display: none;
 }
 
 /* Firefox */
@@ -2496,6 +2507,27 @@ and (max-width: 991px) {
 
 @media screen
 and (max-width: 768px) {
+
+    .table .quantity{
+        text-align: right;
+    }
+
+    .category-filter-container {
+        flex-wrap: wrap;
+    }
+
+    .category-filter-container > div {
+        width: 100%;
+    }
+
+    .category-filter-title:last-of-type {
+        margin-bottom: 25px;
+    }
+
+    .category-filter-reset {
+        margin-bottom: 25px;
+        display: table;
+    }
 
     .card-delivery.card-3, .card-delivery.card-1 {
         background-size: 35% 95%;
