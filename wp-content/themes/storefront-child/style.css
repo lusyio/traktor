@@ -3,7 +3,7 @@ Theme Name:   	Richbee
 Author:       	Richbee
 Template:     	storefront
 Description:  	Дочерняя тема для storefront
-Version:      	1.0.4
+Version:      	1.0.5
 Theme URI:    https://richbee.ru/
 Author URI:   https://richbee.ru/
 
@@ -100,6 +100,11 @@ header .woocommerce {
     background-size: contain !important;
     height: 230px;
     border-bottom: 5px solid #598468;
+}
+
+table.cart td.actions{
+    border-top: 0;
+    padding-top: 15px;
 }
 
 .delivery h1.entry-title {
@@ -2554,6 +2559,10 @@ and (max-width: 991px) {
 
 @media screen
 and (max-width: 768px) {
+
+    .main-delivery .main-delivery__title{
+        text-align: left;
+    }
 
     .woocommerce-cart-form__cart-item .quantity {
         text-align: right;
