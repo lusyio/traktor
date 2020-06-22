@@ -28,7 +28,7 @@ echo wc_get_stock_html($product); // WPCS: XSS ok.
 if ($product->is_in_stock()) : ?>
 
     <?php do_action('woocommerce_before_add_to_cart_form'); ?>
-    <?php if ($product->manage_stock): ?>
+    <?php if ($product->manage_stock === 'yes'): ?>
         <p class="product-in-stock">В наличии: <?= $product->stock_quantity; ?></p>
     <?php else: ?>
         <p class="product-in-stock">В наличии</p>
