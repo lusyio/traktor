@@ -3,7 +3,7 @@ Theme Name:   	Richbee
 Author:       	Richbee
 Template:     	storefront
 Description:  	Дочерняя тема для storefront
-Version:      	1.0.3
+Version:      	1.0.4
 Theme URI:    https://richbee.ru/
 Author URI:   https://richbee.ru/
 
@@ -263,6 +263,13 @@ header .header-menu ul li a {
 
 header .header-menu ul li:first-of-type a {
     margin-left: 0;
+}
+
+html .wc-backward {
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+    display: table;
 }
 
 .header-phones {
@@ -1054,7 +1061,7 @@ h1.entry-title.product_title {
     border: 0;
 }
 
-.navbar-toggler{
+.navbar-toggler {
     border: 0 !important;
     transform: scale(1.5);
 }
@@ -1709,7 +1716,7 @@ html .flex-viewport {
     margin-bottom: 10px;
 }
 
-.product-out-stock{
+.product-out-stock {
     font-family: 'Montserrat', sans-serif;
     font-weight: normal;
     font-size: 18px;
@@ -2153,7 +2160,7 @@ html a:hover {
     color: #446650;
 }
 
-#billing_country_field{
+#billing_country_field {
     display: none;
 }
 
@@ -2254,6 +2261,29 @@ table:not( .has-background ) tbody td {
     border: none;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
     transition: box-shadow 135ms cubic-bezier(.4, 0, .2, 1);
+}
+
+html body .btn-primary {
+    background: #598468;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+    padding: 18px;
+    width: 100%;
+    transition: 145ms ease-in-out;
+    max-width: 300px;
+    text-align: center;
+    margin: auto;
+}
+
+html .alert-success{
+    color: #000;
+    background-color: #fff;
+    border-color: #598468;
 }
 
 .woocommerce-message:hover, .woocommerce-info:hover, .woocommerce-error:hover, .woocommerce-noreviews:hover, p.no-comments:hover {
@@ -2535,7 +2565,7 @@ and (max-width: 768px) {
     }
 
 
-    .table .quantity{
+    .table .quantity {
         text-align: right;
     }
 

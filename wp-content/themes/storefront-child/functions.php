@@ -801,3 +801,27 @@ function show_new_checkout_field_emails($order, $sent_to_admin, $plain_text, $em
 
 add_filter( 'woocommerce_get_stock_html', '__return_empty_string' );
 
+// Удаление инлайн-скриптов из хедера
+add_filter('storefront_customizer_css', '__return_false');
+add_filter('storefront_customizer_woocommerce_css', '__return_false');
+add_filter('storefront_gutenberg_block_editor_customizer_css', '__return_false');
+
+add_action('wp_print_styles', function () {
+    wp_styles()->add_data('woocommerce-inline', 'after', '');
+});
+
+add_action('init', function () {
+    remove_action('wp_head', 'wc_gallery_noscript');
+});
+add_action('init', function () {
+    remove_action('wp_head', 'wc_gallery_noscript');
+});
+// Конец удаления инлайн-скриптов из хедера
+
+add_filter( 'woocommerce_account_menu_items', 'custom_remove_downloads_my_account', 999 );
+
+function custom_remove_downloads_my_account( $items ) {
+    unset($items['downloads']);
+    return $items;
+}
+
