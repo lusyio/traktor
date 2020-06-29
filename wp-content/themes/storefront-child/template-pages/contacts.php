@@ -34,7 +34,7 @@ Template Post Type: post, page, product
                 </div>
                 <div class="contacts__list">
                     <div>
-                        <img src="/wp-content/themes/storefront-child/svg/whatsapp.svg" alt="whatsapp">
+                        <img src="/wp-content/themes/storefront-child/svg/svg-phone.svg" alt="phone">
                     </div>
                     <p>
                         <a href="tel:<?= get_field('contacts_phone_1') ?>"><?= get_field('contacts_phone_1') ?></a>
@@ -42,7 +42,7 @@ Template Post Type: post, page, product
                 </div>
                 <div class="contacts__list">
                     <div>
-                        <img src="/wp-content/themes/storefront-child/svg/viber.svg" alt="viber">
+                        <img src="/wp-content/themes/storefront-child/svg/whatsapp.svg" alt="whatsapp">
                     </div>
                     <p>
                         <a href="tel:<?= get_field('contacts_phone_2') ?>"><?= get_field('contacts_phone_2') ?></a>
@@ -56,7 +56,7 @@ Template Post Type: post, page, product
                         <a href="skype:<?= get_field('contacts_skype') ?>?chat"><?= get_field('contacts_skype') ?></a>
                     </p>
                 </div>
-                <div class="contacts__list">
+                <div class="contacts__list mb-4">
                     <div>
                         <img src="/wp-content/themes/storefront-child/svg/svg-mail.svg" alt="mail">
                     </div>
@@ -64,6 +64,7 @@ Template Post Type: post, page, product
                         <a href="mailto:<?= get_field('contacts_email') ?>"><?= get_field('contacts_email') ?></a>
                     </p>
                 </div>
+                <img src="/wp-content/themes/storefront-child/images/contacts-img.jpg" alt="">
             </div>
             <div class="col-lg-6 col-12 contacts__map-container">
                 <div class="contacts__map">
