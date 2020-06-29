@@ -63,6 +63,7 @@
                     $url = $menu_item->url; // URL ссылки
                     echo '<li><a href="' . $url . '">' . $title . '</a></li>';
                 }
+                echo '<li><a href="' . get_permalink(163) . ' ">Политика конфиденциальности</a></li>';
                 echo '</ul>';
             }
             ?>
