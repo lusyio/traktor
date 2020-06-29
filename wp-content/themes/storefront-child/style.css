@@ -748,6 +748,7 @@ h1.entry-title.product_title {
 }
 
 .card-delivery {
+    width: 100%;
     position: relative;
     z-index: 1;
     background-color: #fff !important;

@@ -13,7 +13,7 @@ Template Post Type: post, page, product
     </header>
     <?php the_content(); ?>
     <div class="row">
-        <div class="col-lg-4 col-12">
+        <div class="col-lg-4 col-12 d-flex">
             <div class="card-delivery">
                 <div class="card-delivery__header"
                      style="background: url('/wp-content/themes/storefront-child/images/cdek.png') center;">
@@ -25,7 +25,7 @@ Template Post Type: post, page, product
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-12">
+        <div class="col-lg-4 col-12 d-flex">
             <div class="card-delivery">
                 <div class="card-delivery__header"
                      style="background: url('/wp-content/themes/storefront-child/images/delovie-linii.png') center;">
@@ -37,7 +37,7 @@ Template Post Type: post, page, product
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 col-12">
+        <div class="col-lg-4 col-12 d-flex">
             <div class="card-delivery">
                 <div class="card-delivery__header"
                      style="background: url('/wp-content/themes/storefront-child/images/pochta-rossii.jpg') center;">
