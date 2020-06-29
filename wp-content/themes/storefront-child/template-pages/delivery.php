@@ -44,6 +44,7 @@ Template Post Type: post, page, product
                 </div>
                 <div class="card-delivery__body">
                     <h3 class="card-delivery__title">Доставка Почта России</h3>
+                    <p class="card-delivery__info mb-2">Доступно только физическим лицам</p>
                     <p class="card-delivery__info mb-2">Стоимость доставки включена в стоимость заказа</p>
                 </div>
             </div>

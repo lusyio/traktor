@@ -267,7 +267,7 @@ function custom_remove_footer_credit()
 //Добавление favicon
 function favicon_link()
 {
-    echo '<link rel="shortcut icon" type="image/x-icon" href="/favicon.png" />' . "\n";
+    echo '<link rel="shortcut icon" type="image/x-icon" href="/wp-content/themes/storefront-child/favicon.png" />' . "\n";
 }
 
 add_action('wp_head', 'favicon_link');
