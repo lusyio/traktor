@@ -2204,6 +2204,14 @@ html .cart input[type=number].qty {
     visibility: visible;
 }
 
+.form-control.is-invalid, .was-validated .form-control:invalid {
+    border-color: #dc3545 !important;
+}
+
+.form-control.is-valid, .was-validated .form-control:valid {
+    border-color: #28a745 !important;
+}
+
 .required {
     visibility: hidden;
 }
