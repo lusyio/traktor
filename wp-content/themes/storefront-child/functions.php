@@ -858,7 +858,7 @@ add_filter('woocs_raw_woocommerce_price', function ($price) {
 add_action('woocommerce_checkout_process', 'custom_validate_billing_phone');
 function custom_validate_billing_phone()
 {
-    $is_correct = preg_match('(\+7|(8))\d{10}', $_POST['billing_phone']);
+    $is_correct = preg_match('(\+7|(8)|(7))\d{10}', $_POST['billing_phone']);
     if ($_POST['billing_phone'] && !$is_correct) {
         wc_add_notice(__('Поле телефона неверное.'), 'error');
     }
