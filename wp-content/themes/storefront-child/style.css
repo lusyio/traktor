@@ -2200,7 +2200,8 @@ html .cart input[type=number].qty {
 }
 
 .woocommerce form .form-row .required {
-    visibility: hidden;
+    text-decoration: none;
+    visibility: visible;
 }
 
 .required {
