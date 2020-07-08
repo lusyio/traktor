@@ -13,6 +13,7 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="yandex-verification" content="44c3ca3dc603e98a" />
     <link rel="profile" href="http://gmpg.org/xfn/11">
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
     <?php wp_head(); ?>
@@ -80,8 +81,12 @@
                 </div>
                 <div class="d-flex">
                     <div class="header-phones">
-                        <img src="/wp-content/themes/storefront-child/svg/whatsapp.svg" alt="">
-                        <img src="/wp-content/themes/storefront-child/svg/viber.svg" alt="">
+                        <a class="mb-0 mr-2" href="https://api.whatsapp.com/send?phone=<?= get_field('contacts_phone_2', 16) ?>">
+                            <img src="/wp-content/themes/storefront-child/svg/whatsapp.svg" alt="">
+                        </a>
+                        <a href="viber://chat?number=<?= get_field('contacts_phone_2', 16) ?>">
+                            <img src="/wp-content/themes/storefront-child/svg/viber.svg" alt="">
+                        </a>
                         <p>
                             <a href="tel:<?= get_field('contacts_phone_1', 16) ?>"><?= get_field('contacts_phone_1', 16) ?></a>
                             <a href="tel:<?= get_field('contacts_phone_2', 16) ?>"><?= get_field('contacts_phone_2', 16) ?></a>
