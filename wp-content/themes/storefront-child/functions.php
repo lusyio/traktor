@@ -679,13 +679,14 @@ function custom_override_checkout_fields($fields)
 
 add_action('woocommerce_before_order_notes', 'add_custom_checkout_field');
 
-add_filter( 'woocommerce_checkout_fields' , 'override_billing_checkout_fields', 20, 1 );
+add_filter('woocommerce_checkout_fields', 'override_billing_checkout_fields', 20, 1);
 /**
  * Override fields from checkout
  * @param $fields
  * @return mixed
  */
-function override_billing_checkout_fields( $fields ) {
+function override_billing_checkout_fields($fields)
+{
     $fields['billing']['billing_phone']['placeholder'] = 'Номер телефона';
     $fields['billing']['billing_email']['placeholder'] = 'Email';
     $fields['billing']['billing_postcode']['placeholder'] = 'Индекс';
@@ -822,7 +823,7 @@ function show_new_checkout_field_emails($order, $sent_to_admin, $plain_text, $em
     if (get_post_meta($order_id, '_passport-place', true)) echo '<p><strong>Кем выдан паспорт:</strong> ' . get_post_meta($order_id, '_passport-place', true) . '</p>';
 }
 
-add_filter( 'woocommerce_get_stock_html', '__return_empty_string' );
+add_filter('woocommerce_get_stock_html', '__return_empty_string');
 
 // Удаление инлайн-скриптов из хедера
 add_filter('storefront_customizer_css', '__return_false');
@@ -841,23 +842,25 @@ add_action('init', function () {
 });
 // Конец удаления инлайн-скриптов из хедера
 
-add_filter( 'woocommerce_account_menu_items', 'custom_remove_downloads_my_account', 999 );
+add_filter('woocommerce_account_menu_items', 'custom_remove_downloads_my_account', 999);
 
-function custom_remove_downloads_my_account( $items ) {
+function custom_remove_downloads_my_account($items)
+{
     unset($items['downloads']);
     return $items;
 }
 
-add_filter('woocs_raw_woocommerce_price', function($price) {
+add_filter('woocs_raw_woocommerce_price', function ($price) {
     return round($price * 2, 0) / 2;
 });
 
 // Custom validation for Billing Phone checkout field
 add_action('woocommerce_checkout_process', 'custom_validate_billing_phone');
-function custom_validate_billing_phone() {
-    $is_correct = preg_match('~^\d{10}$~', $_POST['billing_phone']);
-    if ( $_POST['billing_phone'] && !$is_correct) {
-        wc_add_notice( __( 'Поле телефона неверное.' ), 'error' );
+function custom_validate_billing_phone()
+{
+    $is_correct = preg_match('/^(?:1(?:[. -])?)?(?:\((?=\d{3}\)))?([2-9]\d{2})(?:(?<=\(\d{3})\))? ?(?:(?<=\d{3})[.-])?([2-9]\d{2})[. -]?(\d{4})(?: (?i:ext)\.? ?(\d{1,5}))?$/', $_POST['billing_phone']);
+    if ($_POST['billing_phone'] && !$is_correct) {
+        wc_add_notice(__('Поле телефона неверное.'), 'error');
     }
 }
 
