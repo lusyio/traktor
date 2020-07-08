@@ -679,19 +679,43 @@ function custom_override_checkout_fields($fields)
 
 add_action('woocommerce_before_order_notes', 'add_custom_checkout_field');
 
-add_filter( 'woocommerce_checkout_fields' , 'override_billing_checkout_fields', 20, 1 );
+add_filter('woocommerce_checkout_fields', 'override_billing_checkout_fields', 20, 1);
 /**
  * Override fields from checkout
  * @param $fields
  * @return mixed
  */
-function override_billing_checkout_fields( $fields ) {
+function override_billing_checkout_fields($fields)
+{
     $fields['billing']['billing_phone']['placeholder'] = 'Номер телефона';
     $fields['billing']['billing_email']['placeholder'] = 'Email';
     $fields['billing']['billing_postcode']['placeholder'] = 'Индекс';
     $fields['billing']['billing_last_name']['placeholder'] = 'Фамилия';
     $fields['billing']['billing_first_name']['placeholder'] = 'Имя';
     $fields['billing']['billing_address_1']['placeholder'] = 'Город, улица, номер дома и квартиры';
+    return $fields;
+}
+
+add_filter('woocommerce_billing_fields', 'custom_woocommerce_billing_fields');
+
+/**
+ * Add new field to checkout
+ * @param $fields
+ * @return mixed
+ */
+function custom_woocommerce_billing_fields($fields)
+{
+
+    $fields['billing_options'] = array(
+        'type' => 'text',
+        'class' => array('form-row-wide'),
+        'label' => 'Отчество',
+        'placeholder' => 'Отчество',
+        'required' => true,
+        'default' => '',
+        'priority' => '25',
+    );
+
     return $fields;
 }
 
@@ -799,7 +823,7 @@ function show_new_checkout_field_emails($order, $sent_to_admin, $plain_text, $em
     if (get_post_meta($order_id, '_passport-place', true)) echo '<p><strong>Кем выдан паспорт:</strong> ' . get_post_meta($order_id, '_passport-place', true) . '</p>';
 }
 
-add_filter( 'woocommerce_get_stock_html', '__return_empty_string' );
+add_filter('woocommerce_get_stock_html', '__return_empty_string');
 
 // Удаление инлайн-скриптов из хедера
 add_filter('storefront_customizer_css', '__return_false');
@@ -818,14 +842,15 @@ add_action('init', function () {
 });
 // Конец удаления инлайн-скриптов из хедера
 
-add_filter( 'woocommerce_account_menu_items', 'custom_remove_downloads_my_account', 999 );
+add_filter('woocommerce_account_menu_items', 'custom_remove_downloads_my_account', 999);
 
-function custom_remove_downloads_my_account( $items ) {
+function custom_remove_downloads_my_account($items)
+{
     unset($items['downloads']);
     return $items;
 }
 
-add_filter('woocs_raw_woocommerce_price', function($price) {
+add_filter('woocs_raw_woocommerce_price', function ($price) {
     return round($price * 2, 0) / 2;
 });
 
