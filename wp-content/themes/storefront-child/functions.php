@@ -729,7 +729,7 @@ function add_custom_checkout_field($checkout)
         'class' => array('form-row form-row-first'),
         'label' => 'Серия паспорта',
         'placeholder' => 'Серия паспорта',
-        'required' => true,
+        'required' => false,
         'default' => '',
     ), $checkout->get_value('passport-series'));
     woocommerce_form_field('passport-number', array(
@@ -737,7 +737,7 @@ function add_custom_checkout_field($checkout)
         'class' => array('form-row form-row-last'),
         'label' => 'Номер паспорта',
         'placeholder' => 'Номер паспорта',
-        'required' => true,
+        'required' => false,
         'default' => '',
     ), $checkout->get_value('passport-number'));
     woocommerce_form_field('passport-date', array(
@@ -745,7 +745,7 @@ function add_custom_checkout_field($checkout)
         'class' => array('form-row-wide'),
         'label' => 'Когда выдан',
         'placeholder' => 'Дата выдачи',
-        'required' => true,
+        'required' => false,
         'default' => '',
     ), $checkout->get_value('passport-date'));
     woocommerce_form_field('passport-place', array(
@@ -753,7 +753,7 @@ function add_custom_checkout_field($checkout)
         'class' => array('form-row-wide'),
         'label' => 'Кем выдан',
         'placeholder' => 'Кем выдан',
-        'required' => true,
+        'required' => false,
         'default' => '',
     ), $checkout->get_value('passport-place'));
 }
