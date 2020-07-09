@@ -2212,7 +2212,7 @@ html .cart input[type=number].qty {
     border-color: #28a745 !important;
 }
 
-.wc_payment_methods.payment_methods methods {
+#payment .payment_methods{
     display: none !important;
 }
 
