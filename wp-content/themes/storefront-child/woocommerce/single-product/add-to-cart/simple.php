@@ -66,7 +66,11 @@ if ($product->is_in_stock()) : ?>
     </form>
 
     <?php do_action('woocommerce_after_add_to_cart_form'); ?>
+    <a style="max-width: 260px" class="btn btn-traktor-primary d-block ml-auto" href="/product-category/minitractor/">Вернуться
+        в каталог</a>
 
 <?php else: ?>
     <p class="product-out-stock">Нет в наличии</p>
+    <a style="max-width: 260px" class="btn btn-traktor-primary d-block ml-auto" href="/product-category/minitractor/">Вернуться
+        в каталог</a>
 <?php endif; ?>
