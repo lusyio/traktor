@@ -2212,6 +2212,10 @@ html .cart input[type=number].qty {
     border-color: #28a745 !important;
 }
 
+.woocommerce-checkout-payment {
+    display: none !important;
+}
+
 .required {
     visibility: hidden;
 }
