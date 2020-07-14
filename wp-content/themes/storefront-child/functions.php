@@ -853,14 +853,3 @@ function custom_remove_downloads_my_account($items)
 add_filter('woocs_raw_woocommerce_price', function ($price) {
     return round($price * 2, 0) / 2;
 });
-
-// Custom validation for Billing Phone checkout field
-add_action('woocommerce_checkout_process', 'custom_validate_billing_phone');
-function custom_validate_billing_phone()
-{
-    preg_match_all('/(\+7|(8)|(7))\d{10}/m', $_POST['billing_phone'], $matches, PREG_SET_ORDER, 0);
-
-    if ($_POST['billing_phone'] && count($matches) === 0) {
-        wc_add_notice('Поле телефона заполнено не верно', 'error');
-    }
-}

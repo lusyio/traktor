@@ -90,8 +90,12 @@
 
     </div><!-- .col-full -->
 </footer><!-- #colophon -->
-
+<script src="https://unpkg.com/imask"></script>
 <script>
+    const phoneMask = IMask(
+        document.getElementById('billing_phone'), {
+            mask: '+{7}(000)000-00-00'
+        });
     jQuery(function ($) {
 
         $('.single input[type=phone]').on('keyup', function () {
