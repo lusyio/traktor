@@ -850,6 +850,6 @@ function custom_remove_downloads_my_account($items)
     return $items;
 }
 
-add_filter('woocs_raw_woocommerce_price', function ($price) {
-    return round($price * 2, 0) / 2;
-});
+//add_filter('woocs_raw_woocommerce_price', function ($price) {
+//    return round($price * 2, 0) / 2;
+//});
