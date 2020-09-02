@@ -3,7 +3,7 @@ Theme Name:   	Richbee
 Author:       	Richbee
 Template:     	storefront
 Description:  	Дочерняя тема для storefront
-Version:      	1.0.7
+Version:      	1.0.8
 Theme URI:    https://richbee.ru/
 Author URI:   https://richbee.ru/
 
@@ -421,7 +421,7 @@ html .woocommerce-pagination {
     font-weight: normal;
     font-size: 18px;
     line-height: 22px;
-    width: 40px;
+    min-width: 40px;
     height: 40px;
     border: 1px solid #D7D8DC !important;
     color: #D7D8DC;
@@ -2212,7 +2212,7 @@ html .cart input[type=number].qty {
     border-color: #28a745 !important;
 }
 
-#payment .payment_methods{
+#payment .payment_methods {
     display: none !important;
 }
 

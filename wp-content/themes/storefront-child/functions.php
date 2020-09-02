@@ -482,9 +482,15 @@ function get_products_by_category_slug($slug = '')
             <div class="product-card">
                 <div class="product-card__body">
                     <a href="<?= $product->get_permalink() ?>">
-                        <img class="product-card__img"
-                             src="<?= wp_get_attachment_image_url($image_id, 'medium'); ?>"
-                             alt="<?= $product->name; ?>">
+                        <?php if ($image_id): ?>
+                            <img class="product-card__img"
+                                 src="<?= wp_get_attachment_image_url($image_id, 'medium') ?>"
+                                 alt="<?= $product->name ?>">
+                        <?php else: ?>
+                            <img class="product-card__img"
+                                 src="<?= wc_placeholder_img_src('medium') ?>"
+                                 alt="<?= $product->name ?>">
+                        <?php endif; ?>
                     </a>
                     <h4 class="product-card__name"><?= $product->name ?></h4>
                     <p>
