@@ -630,14 +630,14 @@ function new_woocommerce_breadcrumbs()
             'wrap_after' => '</nav></div></div></div></div>',
             'home' => _x('Home', 'breadcrumb', 'woocommerce'),
         );
-    } else {
-        return array(
-            'delimiter' => ' - ',
-            'wrap_before' => '<div class="new-storefront-breadcrumb"><div class="container"><div class="row"><div class="col-12"><nav class="woocommerce-breadcrumb">',
-            'wrap_after' => '</nav></div></div></div></div>',
-            'home' => _x('Home', 'breadcrumb', 'woocommerce'),
-        );
     }
+
+    return array(
+        'delimiter' => ' - ',
+        'wrap_before' => '<div class="new-storefront-breadcrumb"><div class="container"><div class="row"><div class="col-12"><nav class="woocommerce-breadcrumb">',
+        'wrap_after' => '</nav></div></div></div></div>',
+        'home' => _x('Home', 'breadcrumb', 'woocommerce'),
+    );
 }
 
 add_action('woocs_force_pay_bygeoip_rules', function ($country, $user_currency, $current_currency) {
@@ -665,21 +665,14 @@ add_filter('woocommerce_checkout_fields', 'custom_override_checkout_fields');
  */
 function custom_override_checkout_fields($fields)
 {
-//    unset($fields['billing']['billing_first_name']);
-//    unset($fields['billing']['billing_last_name']);
-    unset($fields['billing']['billing_company']);
-//    unset($fields['billing']['billing_address_1']);
-    unset($fields['billing']['billing_address_2']);
-    unset($fields['billing']['billing_city']);
-//    unset($fields['billing']['billing_postcode']);
-//    unset($fields['billing']['billing_country']);
-    unset($fields['billing']['billing_state']);
-//    unset($fields['billing']['billing_phone']);
-    unset($fields['order']['order_comments']);
-//    unset($fields['billing']['billing_email']);
-    unset($fields['account']['account_username']);
-    unset($fields['account']['account_password']);
-    unset($fields['account']['account_password-2']);
+    unset($fields['billing']['billing_company'],
+        $fields['billing']['billing_address_2'],
+        $fields['billing']['billing_city'],
+        $fields['billing']['billing_state'],
+        $fields['order']['order_comments'],
+        $fields['account']['account_username'],
+        $fields['account']['account_password'],
+        $fields['account']['account_password-2']);
     return $fields;
 }
 
@@ -697,7 +690,11 @@ function override_billing_checkout_fields($fields)
     $fields['billing']['billing_email']['placeholder'] = 'Email';
     $fields['billing']['billing_postcode']['placeholder'] = 'Индекс';
     $fields['billing']['billing_last_name']['placeholder'] = 'Фамилия';
+    $fields['billing']['billing_last_name']['priority'] = 10;
+    $fields['billing']['billing_last_name']['class'][0] = 'form-row-first';
     $fields['billing']['billing_first_name']['placeholder'] = 'Имя';
+    $fields['billing']['billing_first_name']['priority'] = 20;
+    $fields['billing']['billing_first_name']['class'][0] = 'form-row-last';
     $fields['billing']['billing_address_1']['placeholder'] = 'Город, улица, номер дома и квартиры';
     return $fields;
 }
@@ -792,10 +789,18 @@ add_action('woocommerce_checkout_update_order_meta', 'save_new_checkout_field');
  */
 function save_new_checkout_field($order_id)
 {
-    if ($_POST['passport-series']) update_post_meta($order_id, '_passport-series', esc_attr($_POST['passport-series']));
-    if ($_POST['passport-number']) update_post_meta($order_id, '_passport-number', esc_attr($_POST['passport-number']));
-    if ($_POST['passport-date']) update_post_meta($order_id, '_passport-date', esc_attr($_POST['passport-date']));
-    if ($_POST['passport-place']) update_post_meta($order_id, '_passport-place', esc_attr($_POST['passport-place']));
+    if ($_POST['passport-series']) {
+        update_post_meta($order_id, '_passport-series', esc_attr($_POST['passport-series']));
+    }
+    if ($_POST['passport-number']) {
+        update_post_meta($order_id, '_passport-number', esc_attr($_POST['passport-number']));
+    }
+    if ($_POST['passport-date']) {
+        update_post_meta($order_id, '_passport-date', esc_attr($_POST['passport-date']));
+    }
+    if ($_POST['passport-place']) {
+        update_post_meta($order_id, '_passport-place', esc_attr($_POST['passport-place']));
+    }
 }
 
 add_action('woocommerce_admin_order_data_after_billing_address', 'show_new_checkout_field_order', 10, 1);
@@ -806,10 +811,18 @@ add_action('woocommerce_admin_order_data_after_billing_address', 'show_new_check
 function show_new_checkout_field_order($order)
 {
     $order_id = $order->get_id();
-    if (get_post_meta($order_id, '_passport-series', true)) echo '<p><strong>Серия паспорта:</strong> ' . get_post_meta($order_id, '_passport-series', true) . '</p>';
-    if (get_post_meta($order_id, '_passport-number', true)) echo '<p><strong>Номер паспорта:</strong> ' . get_post_meta($order_id, '_passport-number', true) . '</p>';
-    if (get_post_meta($order_id, '_passport-date', true)) echo '<p><strong>Дата выдачи паспорта:</strong> ' . get_post_meta($order_id, '_passport-date', true) . '</p>';
-    if (get_post_meta($order_id, '_passport-place', true)) echo '<p><strong>Кем выдан паспорт:</strong> ' . get_post_meta($order_id, '_passport-place', true) . '</p>';
+    if (get_post_meta($order_id, '_passport-series', true)) {
+        echo '<p><strong>Серия паспорта:</strong> ' . get_post_meta($order_id, '_passport-series', true) . '</p>';
+    }
+    if (get_post_meta($order_id, '_passport-number', true)) {
+        echo '<p><strong>Номер паспорта:</strong> ' . get_post_meta($order_id, '_passport-number', true) . '</p>';
+    }
+    if (get_post_meta($order_id, '_passport-date', true)) {
+        echo '<p><strong>Дата выдачи паспорта:</strong> ' . get_post_meta($order_id, '_passport-date', true) . '</p>';
+    }
+    if (get_post_meta($order_id, '_passport-place', true)) {
+        echo '<p><strong>Кем выдан паспорт:</strong> ' . get_post_meta($order_id, '_passport-place', true) . '</p>';
+    }
 }
 
 add_action('woocommerce_email_after_order_table', 'show_new_checkout_field_emails', 20, 4);
@@ -823,10 +836,18 @@ add_action('woocommerce_email_after_order_table', 'show_new_checkout_field_email
 function show_new_checkout_field_emails($order, $sent_to_admin, $plain_text, $email)
 {
     $order_id = $order->get_id();
-    if (get_post_meta($order_id, '_passport-series', true)) echo '<p><strong>Серия паспорта:</strong> ' . get_post_meta($order_id, '_passport-series', true) . '</p>';
-    if (get_post_meta($order_id, '_passport-number', true)) echo '<p><strong>Номер паспорта:</strong> ' . get_post_meta($order_id, '_passport-number', true) . '</p>';
-    if (get_post_meta($order_id, '_passport-date', true)) echo '<p><strong>Дата выдачи паспорта:</strong> ' . get_post_meta($order_id, '_passport-date', true) . '</p>';
-    if (get_post_meta($order_id, '_passport-place', true)) echo '<p><strong>Кем выдан паспорт:</strong> ' . get_post_meta($order_id, '_passport-place', true) . '</p>';
+    if (get_post_meta($order_id, '_passport-series', true)) {
+        echo '<p><strong>Серия паспорта:</strong> ' . get_post_meta($order_id, '_passport-series', true) . '</p>';
+    }
+    if (get_post_meta($order_id, '_passport-number', true)) {
+        echo '<p><strong>Номер паспорта:</strong> ' . get_post_meta($order_id, '_passport-number', true) . '</p>';
+    }
+    if (get_post_meta($order_id, '_passport-date', true)) {
+        echo '<p><strong>Дата выдачи паспорта:</strong> ' . get_post_meta($order_id, '_passport-date', true) . '</p>';
+    }
+    if (get_post_meta($order_id, '_passport-place', true)) {
+        echo '<p><strong>Кем выдан паспорт:</strong> ' . get_post_meta($order_id, '_passport-place', true) . '</p>';
+    }
 }
 
 add_filter('woocommerce_get_stock_html', '__return_empty_string');
@@ -855,7 +876,3 @@ function custom_remove_downloads_my_account($items)
     unset($items['downloads']);
     return $items;
 }
-
-//add_filter('woocs_raw_woocommerce_price', function ($price) {
-//    return round($price * 2, 0) / 2;
-//});
