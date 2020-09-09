@@ -709,7 +709,7 @@ add_filter('woocommerce_billing_fields', 'custom_woocommerce_billing_fields');
 function custom_woocommerce_billing_fields($fields)
 {
 
-    $fields['billing_options'] = array(
+    $fields['billing_patronymic'] = array(
         'type' => 'text',
         'class' => array('form-row-wide'),
         'label' => 'Отчество',
@@ -771,6 +771,9 @@ function validate_new_checkout_field()
     if (!$_POST['passport-series']) {
         wc_add_notice('Пожалуйста введите серию паспорта', 'error');
     }
+    if (!$_POST['billing_patronymic']) {
+        wc_add_notice('Пожалуйста введите отчество', 'error');
+    }
     if (!$_POST['passport-number']) {
         wc_add_notice('Пожалуйста введите номер паспорта', 'error');
     }
@@ -792,6 +795,9 @@ function save_new_checkout_field($order_id)
     if ($_POST['passport-series']) {
         update_post_meta($order_id, '_passport-series', esc_attr($_POST['passport-series']));
     }
+    if ($_POST['billing_patronymic']) {
+        update_post_meta($order_id, '_billing_patronymic', esc_attr($_POST['billing_patronymic']));
+    }
     if ($_POST['passport-number']) {
         update_post_meta($order_id, '_passport-number', esc_attr($_POST['passport-number']));
     }
@@ -811,6 +817,9 @@ add_action('woocommerce_admin_order_data_after_billing_address', 'show_new_check
 function show_new_checkout_field_order($order)
 {
     $order_id = $order->get_id();
+    if (get_post_meta($order_id, '_billing_patronymic', true)) {
+        echo '<p><strong>Отчество:</strong> ' . get_post_meta($order_id, '_billing_patronymic', true) . '</p>';
+    }
     if (get_post_meta($order_id, '_passport-series', true)) {
         echo '<p><strong>Серия паспорта:</strong> ' . get_post_meta($order_id, '_passport-series', true) . '</p>';
     }
@@ -836,6 +845,9 @@ add_action('woocommerce_email_after_order_table', 'show_new_checkout_field_email
 function show_new_checkout_field_emails($order, $sent_to_admin, $plain_text, $email)
 {
     $order_id = $order->get_id();
+    if (get_post_meta($order_id, '_billing_patronymic', true)) {
+        echo '<p><strong>Отчество:</strong> ' . get_post_meta($order_id, '_billing_patronymic', true) . '</p>';
+    }
     if (get_post_meta($order_id, '_passport-series', true)) {
         echo '<p><strong>Серия паспорта:</strong> ' . get_post_meta($order_id, '_passport-series', true) . '</p>';
     }
